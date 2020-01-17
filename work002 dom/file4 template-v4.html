@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{titulo}}</p>
+    <p c3r-bind="abc">{{saudacao()}}</p>
+    <a v-bind:href="link">Google</a>
+</div>
+
+<script>
+   new Vue({
+       el: '#app',
+       data: {
+           titulo: 'Usando VueJs !',
+           link: 'http://google.com.br'
+       },
+       methods: {
+        saudacao: function() {
+            console.log(this)
+            return this.titulo
+        }
+       }
+   })
+</script>
+
+<!-- propriedade inventada: c3r-bind -->
+<!-- em console: document.querySelector('[c3r-bind]') -->
+<!-- document.querySelector('[c3r-bind]').getAttribute('c3r-bind') -->
+

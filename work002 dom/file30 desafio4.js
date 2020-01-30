@@ -24,7 +24,7 @@ new Vue({
 				valor += 5
 				this.width = `${valor}%`
 				if(valor == 100) clearInterval(cronometro)
-			}, 500)
+			}, 250)
 		},
 		setPerigo(evento) {
 			if(evento.target.value == "true") {

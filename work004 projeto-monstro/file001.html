@@ -25,9 +25,12 @@
                 <div>{{vidaMonstro}}%</div>
             </div>
         </div>
-        <div class="painel resultado">2</div>
-        <div class="painel botoes">3</div>
-        <div class="painel logs">4</div>
+        <div v-if="haResultado" class="painel resultado" >
+            <div v-if="vidaMonstro == 0" class="vencer">Você ganhou :) !</div>
+            <div v-else class="perder">Você perdeu :( !</div>
+        </div>
+        <div class="painel botoes"></div>
+        <div class="painel logs"></div>
     </div>
     <script src="./file001.js"></script>
 </body>

@@ -15,5 +15,39 @@ html {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Area dos Pontos */
 
+.pontuacoes {
+    display: flex;  
+}
+  
+.pontuacao {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+  
+.pontuacao h1 {
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+  
+.barra-vida {
+    width: 80%;
+    height: 20px;
+    border: 1px solid #AAA;
+}
+
+.barra-vida .vida {
+    display: flex;
+    justify-content: cemter;
+    height: 100%;
+    background-color: green;
+}
+
+.barra-vida .vida.perigo {
+    background-color: red;
+}
 

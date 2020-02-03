@@ -29,7 +29,15 @@
             <div v-if="vidaMonstro == 0" class="vencer">Você ganhou :) !</div>
             <div v-else class="perder">Você perdeu :( !</div>
         </div>
-        <div class="painel botoes"></div>
+        <div class="painel botoes">
+            <template v-if="executando">
+                <button class="botao ataque">Ataque</button>
+                <button class="botao ataque-especial">Ataque Especial</button>
+                <button class="botao curar">Curar</button>
+                <button class="botao desistir">Desistir</button>
+            </template>            
+            <button v-else class="botao novo-jogo">Iniciar Jogo</button>
+        </div>
         <div class="painel logs"></div>
     </div>
     <script src="./file001.js"></script>

@@ -68,3 +68,42 @@ html {
     color: red;
 }
 
+/* Area dos Botoes */
+
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+  
+.botao {
+    padding: 5px 10px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+  
+.novo-jogo {
+    background-color: #4253af;
+    color: #fff;
+}
+  
+.ataque {
+    background-color: #e51c23;
+    color: #fff;
+}
+  
+.ataque-especial {
+    background-color: #ff9800;
+    color: #000;
+}
+  
+.curar {
+    background-color: #259b24;
+    color: #FFF;
+}
+  
+.desistir {
+    background-color: #BBB;
+    color: #000;
+}

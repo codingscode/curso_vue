@@ -17,12 +17,13 @@ new Vue({
             this.vidaMonstro = 100
         },
         atacar(especial) {
-            this.dano(7, 12, false)
+            this.dano('vidaJogador',7, 12, false)
+            this.dano('vidaMonstro',5, 10, especial)
         },
-        dano(min, max, especial) {
+        dano(atributo, min, max, especial) {
             const plus = especial ? 5 : 0
             const dano = this.aleatorio(min + plus, max + plus)
-            this.vidaJogador = Math.max(this.vidaJogador - dano, 0)
+            this[atributo] = Math.max(this[atributo] - dano, 0)
         }
         ,
         aleatorio(min, max) {

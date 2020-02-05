@@ -31,8 +31,8 @@
         </div>
         <div class="painel botoes">
             <template v-if="executando">
-                <button class="botao ataque">Ataque</button>
-                <button class="botao ataque-especial">Ataque Especial</button>
+                <button class="botao ataque" @click="atacar(false)">Ataque</button>
+                <button class="botao ataque-especial" @click="atacar(true)">Ataque Especial</button>
                 <button class="botao curar">Curar</button>
                 <button class="botao desistir" @click="executando = false">Desistir</button>
             </template>            

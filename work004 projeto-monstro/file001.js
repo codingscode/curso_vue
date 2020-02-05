@@ -29,6 +29,14 @@ new Vue({
         aleatorio(min, max) {
             const valor = Math.random()*(max - min) + min
             return Math.round(valor)
+        },
+        curar(min, max) {
+            const cura = this.aleatorio(min, max)
+            this.vidaJogador = Math.min(this.vidaJogador + cura, 100)
+        },
+        curarEdano() {
+            this.curar(10, 15)
+            this.dano('vidaJogador', 7, 12, false)
         }
     },
     watch: {

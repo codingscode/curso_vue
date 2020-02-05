@@ -26,14 +26,14 @@
             </div>
         </div>
         <div v-if="haResultado" class="painel resultado" >
-            <div v-if="vidaMonstro == 0" class="vencer">Você ganhou :) !</div>
+            <div v-if="vidaMonstro == 0" class="ganhar">Você ganhou :) !</div>
             <div v-else class="perder">Você perdeu :( !</div>
         </div>
         <div class="painel botoes">
             <template v-if="executando">
                 <button class="botao ataque" @click="atacar(false)">Ataque</button>
                 <button class="botao ataque-especial" @click="atacar(true)">Ataque Especial</button>
-                <button class="botao curar">Curar</button>
+                <button class="botao curar" @click="curarEdano">Curar</button>
                 <button class="botao desistir" @click="executando = false">Desistir</button>
             </template>            
             <button v-else class="botao novo-jogo" @click="iniciarJogo">Iniciar Jogo</button>

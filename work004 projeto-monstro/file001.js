@@ -1,7 +1,7 @@
 new Vue({
     el: '#app',
     data: {
-       vidaJogador: 0,
+       vidaJogador: 100,
        vidaMonstro: 100,
        executando: false
     },
@@ -11,7 +11,11 @@ new Vue({
         }
     },
     methods: {
-  
+        iniciarJogo() {
+            this.executando = true
+            this.vidaJogador = 100
+            this.vidaMonstro = 100
+        }
     },
     watch: {
   

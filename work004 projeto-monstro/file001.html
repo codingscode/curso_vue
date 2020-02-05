@@ -34,9 +34,9 @@
                 <button class="botao ataque">Ataque</button>
                 <button class="botao ataque-especial">Ataque Especial</button>
                 <button class="botao curar">Curar</button>
-                <button class="botao desistir">Desistir</button>
+                <button class="botao desistir" @click="executando = false">Desistir</button>
             </template>            
-            <button v-else class="botao novo-jogo">Iniciar Jogo</button>
+            <button v-else class="botao novo-jogo" @click="iniciarJogo">Iniciar Jogo</button>
         </div>
         <div class="painel logs"></div>
     </div>

@@ -31,14 +31,14 @@
         </div>
         <div class="painel botoes">
             <template v-if="executando">
-                <button class="botao ataque" @click="atacar(false)">Ataque</button>
-                <button class="botao ataque-especial" @click="atacar(true)">Ataque Especial</button>
-                <button class="botao curar" @click="curarEdano">Curar</button>
-                <button class="botao desistir" @click="executando = false">Desistir</button>
+                <button @click="atacar(false)" class="botao ataque" >Ataque</button>
+                <button @click="atacar(true)" class="botao ataque-especial" >Ataque Especial</button>
+                <button @click="curarEdano" class="botao curar" >Curar</button>
+                <button @click="executando = false" class="botao desistir" >Desistir</button>
             </template>            
             <button v-else class="botao novo-jogo" @click="iniciarJogo">Iniciar Jogo</button>
         </div>
-        <div class="painel logs"></div>
+        <div v-if="logs.length" class="painel logs"></div>
     </div>
     <script src="./file001.js"></script>
 </body>

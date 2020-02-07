@@ -107,3 +107,37 @@ html {
     background-color: #BBB;
     color: #000;
 }
+
+/* Area dos Logs */
+
+.logs ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logs ul li {
+    display: flex;
+    justify-content: center;
+    margin: 4px 0px;
+    padding: 3px 0px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+  
+.jogador {
+    background-color: #4253afaa;
+    color: #fff;
+}
+  
+.monstro {
+    background-color: #e51c23aa;
+    color: #fff;
+}
+
+
+

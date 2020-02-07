@@ -38,7 +38,11 @@
             </template>            
             <button v-else class="botao novo-jogo" @click="iniciarJogo">Iniciar Jogo</button>
         </div>
-        <div v-if="logs.length" class="painel logs"></div>
+        <div v-if="logs.length" class="painel logs">
+            <ul>
+                <li v-for="log in logs" :class="log.classe" class="log">{{log.texto}}</li>
+            </ul>
+        </div>
     </div>
     <script src="./file001.js"></script>
 </body>

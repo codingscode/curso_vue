@@ -16,6 +16,7 @@ new Vue({
             this.executando = true
             this.vidaJogador = 100
             this.vidaMonstro = 100
+            this.logs = []
         },
         atacar(especial) {
             this.dano('vidaMonstro', 5, 10, especial, 'Jogador', 'Monstro', 'jogador')
@@ -36,10 +37,11 @@ new Vue({
         curar(min, max) {
             const curar = this.aleatorio(min, max)
             this.vidaJogador = Math.min(this.vidaJogador + curar, 100)
+            this.registrarLog(`Jogador ganhou força de ${curar}.`, 'jogador')
         },
         curarEdano() {
             this.curar(10, 15)
-            this.dano('vidaJogador', 7, 12, false)
+            this.dano('vidaJogador', 7, 12, false, 'Monstro', 'Jogador', 'monstro')
         },
         registrarLog(texto, classe) {
             this.logs.unshift({texto, classe})

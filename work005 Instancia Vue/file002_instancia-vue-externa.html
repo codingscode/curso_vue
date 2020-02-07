@@ -1,0 +1,45 @@
+<meta charset=UTF-8">
+<script src="./vue.js"></script>
+
+<div id="app1">
+    {{titulo1}}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<div id="app2">
+    {{titulo2}}
+    <button @click="alterar">Alterar</button>
+</div>
+
+<script>
+    const vm1 = new Vue({
+        el: '#app1',
+        data: {
+            titulo1: 'Teste 1'
+        },
+        methods: {
+            alterar() {
+                vm2.titulo2 += '????'
+            }
+        }
+    })
+
+    const vm2 = new Vue({
+        el: '#app2',
+        data: {
+            titulo2: 'Teste 2'
+        },
+        methods: {
+            alterar() {
+                vm1.titulo1 += '!!!!'
+            }
+        }
+    })
+
+    setTimeout(() => {
+       vm1.titulo1 = 'Alterado pelo cronometro!' 
+    }, 2000);
+
+</script>
+
+

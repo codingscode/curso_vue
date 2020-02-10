@@ -1,21 +1,28 @@
 <meta charset="UTF-8">
 <script src="./vue.js"></script>
 
-
 <div id="app">
-     
+     <componente></componente>
+     <componente></componente>
+     <componente></componente>
+     <componente></componente>
 </div>
 
 <script>
+    Vue.component('componente', {
+        template: '<h1>Componente</h1>'
+    })
+
     const vm = new Vue({
-        template: 
+        el: '#app',
+        /*template: 
            `<div>
                 <h1>{{aula}}</h1>
                 <h2>{{modulo}}</h2>
                 <button @click="alterarAula">Alterar Aula</button>
                 <button @click="alterarModulo">Alterar Módulo</button> 
             </div>`
-        ,
+        ,*/
         data: {
             aula: 'Aula: Montando Instância Vue',
             modulo: 'Modulo: Instância Vue'
@@ -29,8 +36,5 @@
             }
         }
     })
-
-    //vm.$mount('#app')
-    vm.$mount()
-    document.querySelector('#app').appendChild(vm.$el)
+    
 </script>

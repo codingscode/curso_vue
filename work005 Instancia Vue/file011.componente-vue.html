@@ -1,13 +1,14 @@
 <meta charset="UTF-8">
 <script src="./vue.js"></script>
 
-
 <div id="app">
-     
+     <div class="comp"></div>
 </div>
 
 <script>
     const vm = new Vue({
+        //el: '#app',
+        el: '.comp',
         template: 
            `<div>
                 <h1>{{aula}}</h1>
@@ -29,8 +30,5 @@
             }
         }
     })
-
-    //vm.$mount('#app')
-    vm.$mount()
-    document.querySelector('#app').appendChild(vm.$el)
+    
 </script>

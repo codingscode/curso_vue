@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script src="./vue.js"></script>
+
+<div id="app">
+     <contador></contador>
+     <contador></contador>
+     <contador></contador>
+</div>
+
+<script >
+    //const dados = {contador: 0}    //deixa de ser autonomo
+    Vue.component('contador', {
+        template: `
+            <div>
+                <span>{{contador}}</span>
+                <button @click="contador++" >+</button>
+                <button @click="contador--" >-</button>    
+            </div>
+        `,
+        data() {                    //data precisa ser uma função
+            return {contador: 0}
+        }
+    })
+
+    new Vue({
+        el: '#app'
+        
+    })
+</script>
+

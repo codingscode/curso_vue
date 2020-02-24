@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import Menu from './Menu.vue'
-import Carousel from './Carousel.vue'
-import BarFerr from './BarFerr.vue'
-import Footer from './Footer.vue'
+import Menu from './components/template/Menu'
+import Carousel from './components/widgets/Carousel'
+import BarFerr from './components/template/BarFerr'
+import Footer from './components/template/Footer'
 export default {
 	components: {'app-footer': Footer, 'app-carousel': Carousel, 'app-barrferr': BarFerr, 'app-menu': Menu},
 	

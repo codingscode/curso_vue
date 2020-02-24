@@ -1,11 +1,11 @@
 <template>
 	<v-app>
-		<app-menu />
-        <app-barrferr />
+		<Menu />
+        <BarFerr />
         <v-content>
-			<app-carousel />
+			<Carousel />
 		</v-content>
-        <app-footer />		
+        <Footer />		
 	</v-app>
 </template>
 
@@ -15,7 +15,8 @@ import Carousel from './components/widgets/Carousel'
 import BarFerr from './components/template/BarFerr'
 import Footer from './components/template/Footer'
 export default {
-	components: {'app-footer': Footer, 'app-carousel': Carousel, 'app-barrferr': BarFerr, 'app-menu': Menu},
+	//components: {appFooter: Footer, appCarousel: Carousel, appBarrferr: BarFerr, appMenu: Menu}
+	components: {Footer,Carousel, BarFerr, Menu}
 	
 }
 </script>

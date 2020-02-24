@@ -2,6 +2,7 @@
     <div class="componente">
         <h2>Alterar os Dados de Usuário</h2>
         <p>Edite as informações</p>
+        <p>Nome do Usuário: <strong>{{nome}}</strong></p>
     </div>
 </template>
 

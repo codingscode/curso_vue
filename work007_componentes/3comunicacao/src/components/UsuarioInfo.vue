@@ -9,7 +9,13 @@
 
 <script>
 export default {
-     props: ['nome'],
+     //props: ['nome'],
+     props: {
+         nome: {  //ou nome: [String, Array]
+            type: String,
+            required: true
+         }    
+     },
      /*data() {
         return {
             nomeAlternativo: this.nome

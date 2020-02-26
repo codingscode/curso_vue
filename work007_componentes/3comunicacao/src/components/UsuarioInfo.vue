@@ -27,7 +27,7 @@ export default {
             return this.nome.split('').reverse().join('')
         },
         reiniciarNome() {
-            this.nome = 'Enoch Salomão'
+            //this.nome = 'Enoch Salomão'
             this.$emit('nomeMudou', this.nome)
         }
      }

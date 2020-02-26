@@ -27,7 +27,10 @@ export default {
         reiniciarNome() {
             const antigo = this.nome
             this.nome = 'Enoch Salomão'
-            this.$emit('nomeMudou', this.nome)
+            this.$emit('nomeMudou', {
+                novo: this.nome,
+                antigo
+            })
         }
      }
 }

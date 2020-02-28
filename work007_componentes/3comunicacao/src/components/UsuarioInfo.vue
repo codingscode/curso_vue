@@ -10,16 +10,15 @@
 </template>
 
 <script>
+import barramento from '../barramento'
+
 export default {
      //props: ['nome'],
      props: {
          nome: {  //ou nome: [String, Array]
             type: String,
             //required: true,
-            default: 'Anonimo',
-            /*default: function() {
-                return Array(10).fill(0).join(',')
-            }*/
+            default: 'Anonimo'
          },
          reiniciarFn: Function,
          idade: Number
@@ -32,6 +31,11 @@ export default {
             //this.nome = 'Enoch Salomão'
             this.$emit('nomeMudou', this.nome)
         }
+     },
+     created() {
+         barramento.$on('idadeMudou', idade => {
+             this.idade = idade
+         })
      }
 }
 </script>

@@ -25,6 +25,7 @@ export default {
     methods: {
             setUsuarioSelecionado(usuario) {
                 barramento.setUsuarioSelecionado(usuario)
+                this.usuarios.pop()
             }
     }
 }

@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<usuario-lista :usuarios="usuarios" />
+		<usuario-lista :usuarios="[...usuarios]" /> <!-- experimentar desfazer -->
 		<usuario-detalhe />
 	</div>
 </template>

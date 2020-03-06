@@ -17,4 +17,8 @@ export default {
         padding: 25px;
         max-width: 450px;
     }
+
+    h1 {
+        color: red!important;
+    }
 </style>

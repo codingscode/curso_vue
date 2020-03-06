@@ -4,7 +4,9 @@
 			<button @click="componente = 'Citacoes' " >Citações</button>
 			<button @click="componente = 'Sobre' " >Sobre</button>
 		</span>
-		<component :is="componente" /> <!-- ou :is="Citacoes" -->
+		<keep-alive>
+ 	         <component :is="componente" /> <!-- ou :is="Citacoes" -->
+		</keep-alive>
 	</div>
 </template>
 

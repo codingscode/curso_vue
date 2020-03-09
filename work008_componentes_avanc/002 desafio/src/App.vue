@@ -1,20 +1,13 @@
 <template>
 	<div id="app">
 		<span>
-			<button class="vermelho">Carregar Componente Vermelho</button>
-			<button class="verde">Carregar Componente Verde</button>
-			<button class="azul">Carregar Componente Azul</button>
+			<button class="vermelho" @click="componente = 'Vermelho'" >Carregar Componente Vermelho</button>
+			<button class="verde" @click="componente = 'Verde'" >Carregar Componente Verde</button>
+			<button class="azul" @click="componente = 'Azul'" >Carregar Componente Azul</button>
 		</span>
-		
-		<Vermelho >
-			<span>Conteúdo do Componente <strong>Vermelho</strong></span>
-		</Vermelho>
-		<Verde >
-			<span>Conteúdo do Componente <strong>Verde</strong></span>
-		</Verde>
-		<Azul >
-			<span>Conteúdo do Componente <strong>Azul</strong></span>
-		</Azul>
+		<component :is="componente">
+            <span slot="conteudo">Conteúdo do Componente <strong>{{componente}}</strong></span>
+		</component>
 	</div>
 </template>
 

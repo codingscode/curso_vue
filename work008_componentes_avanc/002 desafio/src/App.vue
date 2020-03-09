@@ -6,9 +6,15 @@
 			<button class="azul">Carregar Componente Azul</button>
 		</span>
 		
-		<Vermelho />
-		<Verde />
-		<Azul />
+		<Vermelho >
+			<span>Conteúdo do Componente <strong>Vermelho</strong></span>
+		</Vermelho>
+		<Verde >
+			<span>Conteúdo do Componente <strong>Verde</strong></span>
+		</Verde>
+		<Azul >
+			<span>Conteúdo do Componente <strong>Azul</strong></span>
+		</Azul>
 	</div>
 </template>
 
@@ -20,6 +26,11 @@ import Azul from './components/Azul.vue'
 export default {
 	name: 'app',
 	components: { Vermelho, Verde, Azul },
+	data() {
+		return {
+			componente: 'Vermelho'
+		}
+	}
 }
 </script>
 

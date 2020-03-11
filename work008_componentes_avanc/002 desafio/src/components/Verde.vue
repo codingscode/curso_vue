@@ -1,5 +1,5 @@
 <template>
-    <div class="caixa verde">
+    <div class="caixa verde">  <!-- aplicação futura -->
         <slot name="conteudo" />
     </div>
 </template>

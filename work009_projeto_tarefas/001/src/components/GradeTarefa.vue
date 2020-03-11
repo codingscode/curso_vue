@@ -1,13 +1,16 @@
 <template>
-       <div class="tarefas">
+       <div class="grade-tarefa">
             <template>
-                <div v-for="tarefa in tarefas" :key="tarefa.nome" >{{tarefa.nome}}</div>
+                <Tarefa v-for="tarefa in tarefas" :key="tarefa.nome" :tarefa="tarefa" ></Tarefa>
             </template>
        </div>
 </template>
 
 <script>
+import Tarefa from './Tarefa.vue'
+
 export default {
+      components: {Tarefa},
       props: {
           tarefas: {type: Array, required: true}
       }

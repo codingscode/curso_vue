@@ -1,8 +1,9 @@
 <template>
        <div class="grade-tarefa">
-            <template>
+            <template v-if="tarefas.length">
                 <Tarefa v-for="tarefa in tarefas" :key="tarefa.nome" :tarefa="tarefa" ></Tarefa>
             </template>
+            <p v-else class="sem-tarefa"> Sua vida está em dia :)</p>
        </div>
 </template>
 
@@ -18,5 +19,18 @@ export default {
 </script>
 
 <style>
+      .grade-tarefa {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+      }
 
+      .grade-tarefa .tarefa {
+            margin: 10px;
+      }
+
+      .sem-tarefa {
+            color: #AAA;
+            font-size: 1.7rem;
+      }
 </style>

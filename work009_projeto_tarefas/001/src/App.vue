@@ -13,8 +13,8 @@ export default {
      data() {
 		return {
 			tarefas: [
-				{nome: 'Lavar casa', pendente: false},
-				{nome: 'Comprar caderno', pendente: true},
+				{nome: 'Lavar casa', pendente: false},   // experimentar comentar
+				{nome: 'Comprar caderno', pendente: true},  // experimentar comentar
 			]
 		}
 	 }

@@ -1,21 +1,35 @@
 <template>
 	<div id="app">
 		<h1>Tarefas</h1>
+		<NovaTarefa @tarefaAdicionada="adTarefa" />
 		<GradeTarefa :tarefas="tarefas" />
 	</div>
 </template>
 
 <script>
 import GradeTarefa from './components/GradeTarefa'
+import NovaTarefa from './components/NovaTarefa.vue'
 
 export default {
-	 components: {GradeTarefa},
+	 components: {GradeTarefa, NovaTarefa},
      data() {
 		return {
 			tarefas: [
 				{nome: 'Lavar casa', pendente: false},   // experimentar comentar
 				{nome: 'Comprar caderno', pendente: true},  // experimentar comentar
 			]
+		}
+	 },
+	 methods: {
+		adTarefa(tarefa) {
+			const mesmoNome = t => t.nome === tarefa.nome
+			const novoDeFato = this.tarefas.filter(mesmoNome).length == 0
+			if(novoDeFato) {
+				this.tarefas.push({
+					nome: tarefa.nome,
+					pendente: tarefa.pendente || true
+				})
+			}
 		}
 	 }
 }

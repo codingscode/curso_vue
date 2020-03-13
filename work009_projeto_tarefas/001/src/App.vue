@@ -2,7 +2,7 @@
 	<div id="app">
 		<h1>Tarefas</h1>
 		<NovaTarefa @tarefaAdicionada="adTarefa" />
-		<GradeTarefa :tarefas="tarefas" />
+		<GradeTarefa :tarefasgrade="tarefas" @tarefaApagada="apagarTarefa" />
 	</div>
 </template>
 
@@ -30,6 +30,9 @@ export default {
 					pendente: tarefa.pendente || true
 				})
 			}
+		},
+		apagarTarefa(i) {
+		    this.tarefas.splice(i, 1)
 		}
 	 }
 }

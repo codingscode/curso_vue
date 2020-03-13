@@ -1,7 +1,8 @@
 <template>
        <div class="grade-tarefa">
-            <template v-if="tarefas.length">
-                <Tarefa v-for="tarefa in tarefas" :key="tarefa.nome" :tarefa="tarefa" ></Tarefa>
+            <template v-if="tarefasgrade.length">
+                <Tarefa v-for="(tarefa, i) in tarefasgrade" :key="tarefa.nome"
+                     :tarefa="tarefa" @tarefaApagada="$emit('tarefaApagada', i)"></Tarefa>
             </template>
             <p v-else class="sem-tarefa"> Sua vida está em dia :)</p>
        </div>
@@ -13,7 +14,7 @@ import Tarefa from './Tarefa.vue'
 export default {
       components: {Tarefa},
       props: {
-          tarefas: {type: Array, required: true}
+          tarefasgrade: {type: Array, required: true}
       }
 }
 </script>

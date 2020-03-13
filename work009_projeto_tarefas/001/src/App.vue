@@ -2,7 +2,8 @@
 	<div id="app">
 		<h1>Tarefas</h1>
 		<NovaTarefa @tarefaAdicionada="adTarefa" />
-		<GradeTarefa :tarefasgrade="tarefas" @tarefaApagada="apagarTarefa" />
+		<GradeTarefa :tarefasgrade="tarefas" @tarefaApagada="apagarTarefa" 
+		  @estadoTarefaMudou="estadoTarefasToggle" />
 	</div>
 </template>
 
@@ -33,6 +34,9 @@ export default {
 		},
 		apagarTarefa(i) {
 		    this.tarefas.splice(i, 1)
+		},
+		estadoTarefasToggle(i) {
+		    this.tarefas[i].pendente = !this.tarefas[i].pendente
 		}
 	 }
 }

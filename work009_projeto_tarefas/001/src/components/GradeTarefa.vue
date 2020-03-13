@@ -2,7 +2,8 @@
        <div class="grade-tarefa">
             <template v-if="tarefasgrade.length">
                 <Tarefa v-for="(tarefa, i) in tarefasgrade" :key="tarefa.nome"
-                     :tarefa="tarefa" @tarefaApagada="$emit('tarefaApagada', i)"></Tarefa>
+                     :tarefa="tarefa" @tarefaApagada="$emit('tarefaApagada', i)"
+                      @estadoTarefaMudou="$emit('estadoTarefaMudou', i)" ></Tarefa>
             </template>
             <p v-else class="sem-tarefa"> Sua vida está em dia :)</p>
        </div>

@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
 		<h1>Tarefas</h1>
+		<ProgressoTarefas :progresso="progresso" />
 		<NovaTarefa @tarefaAdicionada="adTarefa" />
 		<GradeTarefa :tarefasgrade="tarefas" @tarefaApagada="apagarTarefa" 
 		  @estadoTarefaMudou="estadoTarefasToggle" />
@@ -8,11 +9,12 @@
 </template>
 
 <script>
+import ProgressoTarefas from './components/ProgressoTarefas'
 import GradeTarefa from './components/GradeTarefa'
 import NovaTarefa from './components/NovaTarefa.vue'
 
 export default {
-	 components: {GradeTarefa, NovaTarefa},
+	 components: {GradeTarefa, NovaTarefa, ProgressoTarefas},
      data() {
 		return {
 			tarefas: [
@@ -37,6 +39,13 @@ export default {
 		},
 		estadoTarefasToggle(i) {
 		    this.tarefas[i].pendente = !this.tarefas[i].pendente
+		}
+	 },
+	 computed: {
+		progresso() {
+			const total = this.tarefas.length
+			const feito = this.tarefas.filter(t => !t.pendente).length
+			return Math.round(feito/total*100) || 0
 		}
 	 }
 }

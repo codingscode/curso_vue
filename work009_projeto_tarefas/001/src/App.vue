@@ -47,8 +47,19 @@ export default {
 			const feito = this.tarefas.filter(t => !t.pendente).length
 			return Math.round(feito/total*100) || 0
 		}
-	 }
+	 },
+	 watch: {
+		tarefas() {
+			localStorage.setItem('tarefas', JSON.stringify(this.tarefas))
+		}
+	 },
+	 created() {
+		 const json = localStorage.getItem('tarefas')
+         const array = JSON.parse(json)
+		 this.tarefas = Array.isArray(array) ? array : []
+     }
 }
+//digitar no console localStorage.getItem('tarefas')
 </script>
 
 <style>

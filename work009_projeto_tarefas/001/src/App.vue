@@ -49,8 +49,11 @@ export default {
 		}
 	 },
 	 watch: {
-		tarefas() {
-			localStorage.setItem('tarefas', JSON.stringify(this.tarefas))
+		tarefas: {
+			deep: true,   // se false deixa de monitorar
+			handler() {
+			    localStorage.setItem('tarefas', JSON.stringify(this.tarefas))
+			}
 		}
 	 },
 	 created() {

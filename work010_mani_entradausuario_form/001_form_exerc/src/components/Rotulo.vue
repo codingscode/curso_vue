@@ -2,7 +2,7 @@
     <div class="rotulo">
         <label>{{ nome }}:</label>
         <div class="elemento">
-            <slot></slot>
+            <slot></slot>  <!-- ação futura -->
         </div>
     </div>
 </template>

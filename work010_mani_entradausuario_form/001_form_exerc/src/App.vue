@@ -17,8 +17,9 @@
 					<textarea name="" cols="30" rows="5" v-model="mensagem"></textarea>
 				</Rotulo>
 				<Rotulo nome="Características do Problema">
-					<span class="mr-4"><input type="checkbox" value="reproduzivel"> Reproduzível</span>
-					<span><input type="checkbox" value="intermitente"> Intermitente</span>
+					<span class="mr-4"><input type="checkbox" value="reproduzivel"
+					   v-model="caracteristicas" > Reproduzível</span>
+					<span><input type="checkbox" value="intermitente" v-model="caracteristicas"> Intermitente</span>
 				</Rotulo>
 				<Rotulo nome="Qual produto?">
 					<span class="mr-4"><input type="radio"> Web</span>
@@ -50,8 +51,12 @@
 				<Rotulo nome="Mensagem">
 					<span style="white-space: pre;" >{{mensagem}}</span>
 				</Rotulo>
-				<Rotulo nome="Marque as Opções">
-					<span>???</span>
+				<Rotulo nome="Caracteristicas do problema">
+					<span>
+						<ul>
+							<li v-for="c in caracteristicas" :key="c">{{c}}</li>
+						</ul>
+					</span>
 				</Rotulo>
 				<Rotulo nome="Qual produto?">
 					<span>???</span>
@@ -77,6 +82,7 @@ export default {
 	data() {
 		return {
 			mensagem: '',
+			caracteristicas: [],
 			usuario: {
 				email: '',
 				senha: '',

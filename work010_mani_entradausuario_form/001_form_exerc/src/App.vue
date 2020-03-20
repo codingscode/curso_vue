@@ -5,7 +5,7 @@
 			<form class="painel">
 				<div class="cabecalho">Formulário</div>
 				<Rotulo nome="E-mail">
-					<input type="text" v-model="usuario.email">
+					<input type="text" v-model.lazy.trim="usuario.email">   <!-- só aparece quando clica fora -->
 				</Rotulo>
 				<Rotulo nome="Senha">
 					<input type="password" v-model="usuario.senha">
@@ -84,6 +84,8 @@ export default {
 		}
 	}
 }
+//digitar no console: document.querySelector('input[type="number"]').value
+// parseFloat(document.querySelector('input[type="number"]').value)
 </script>
 
 <style>

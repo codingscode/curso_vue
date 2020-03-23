@@ -1,6 +1,5 @@
 <template>
-    <div class="escolha" @click="value = !value" :class="{ligado: value, desligado: !value}">
-        
+    <div class="escolha" @click="$emit('input', !value)" :class="{ligado: value, desligado: !value}">
         <div class="botao"></div>
     </div>
 </template>

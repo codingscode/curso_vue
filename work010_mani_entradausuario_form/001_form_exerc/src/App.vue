@@ -35,7 +35,7 @@
 					</select>
 				</Rotulo>
 				<Rotulo nome="Primeira Reclamação?">
-					<input type="text" v-model="temp">
+					<input type="text" :value="temp" @input="temp = $event.target.value" >
 					<Escolha />
 				</Rotulo>
 				<hr>
@@ -102,7 +102,7 @@ export default {
 				senha: '',
 				idade: 25
 			},
-			temp: ''
+			temp: 'teste'
 		}
 	},
 	computed: {

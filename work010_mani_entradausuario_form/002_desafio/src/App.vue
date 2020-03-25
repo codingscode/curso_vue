@@ -23,10 +23,10 @@
 			<div class="painel" v-else>
 				<div class="cabecalho">Resultado</div>
                 <Rotulo nome="Nome">
-					 <span>{{nome}}</span>
+					 <span>{{nomeCompleto.nome}}</span>
 				</Rotulo>
                 <Rotulo nome="Sobrenome">
-					 <span>{{sobrenome}}</span>
+					 <span>{{nomeCompleto.sobrenome}}</span>
 				</Rotulo>
                 <Rotulo nome="Email">
 					 <span>{{email}}</span>
@@ -52,8 +52,8 @@ export default {
 	data() {
 		return {
 			nomeCompleto: {
-                nome: '',
-			    sobrenome: ''
+                nome: 'Fulano',
+			    sobrenome: 'Ciclanus'
 			},
 			email: '',
 			senha: '',

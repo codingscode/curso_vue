@@ -2,26 +2,50 @@
 	<div id="app">
 		<h1>Formulário Desafio</h1>
 		<div class="conteudo">
-			<form class="painel">
+			<form class="painel" v-if="!enviado">
 				<div class="cabecalho">Formulário</div>
-				<!-- Exercicio 01 -->
-				<!-- Criar uma formulário de registro -->
-				<!-- Nome completo (Nome e Sobrenome) -->
-				<!-- Email -->
-				<!-- Senha -->
-				<!-- Armazenar Dados? (Sim/Não) -->
+				<Rotulo nome="Nome">
+					 <input type="text" v-model="nome">
+				</Rotulo>
+				<Rotulo nome="Sobrenome">
+					 <input type="text" v-model="sobrenome">
+				</Rotulo>
+				<Rotulo nome="Email">
+					 <input type="text" v-model="email">
+				</Rotulo>
+				<Rotulo nome="Senha">
+					 <input type="password" v-model="senha">
+				</Rotulo>
+				<Rotulo nome="Armazenar Dados ?">
+					 <input type="checkbox" v-model="armazenarDados">
+				</Rotulo>
 
 				<!-- Exercicio 02 -->
 				<!-- Só mostrar o fomulário de não tiver sido submetido -->
 				<!-- Mostrar a área de Resultado apenas quando o formulário for submetido -->
-				
+				<hr>
+				<button @click.prevent="enviar">Enviar</button>
 				<!-- Exercicio 03 -->
 				<!-- Crie um componente personalizado NomeCompleto -->
 				<!-- Esse componente deve receber Nome e Sobrenome -->
 			</form>
-			<div class="painel">
+			<div class="painel" v-else>
 				<div class="cabecalho">Resultado</div>
-
+                <Rotulo nome="Nome">
+					 <span>{{nome}}</span>
+				</Rotulo>
+                <Rotulo nome="Sobrenome">
+					 <span>{{sobrenome}}</span>
+				</Rotulo>
+                <Rotulo nome="Email">
+					 <span>{{email}}</span>
+				</Rotulo>
+                <Rotulo nome="Senha">
+					 <span>{{senha}}</span>
+				</Rotulo>
+                <Rotulo nome="Armazenar Dados ?">
+					 <span>{{armazenarDados}}</span>
+				</Rotulo>
 			</div>
 		</div>
 	</div>
@@ -32,7 +56,23 @@ import Rotulo from './components/Rotulo.vue'
 
 export default {
 	name: 'app',
-	components: { Rotulo }
+	components: { Rotulo },
+	data() {
+		return {
+			nome: '',
+			sobrenome: '',
+			email: '',
+			senha: '',
+			armazenarDados: true,
+			enviado: false
+		}
+	},
+	methods: {
+		enviar() {
+	   	   this.enviado = true
+		}
+	}
+
 }
 </script>
 

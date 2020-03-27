@@ -6,12 +6,17 @@
 		<p v-html="'Usando diretiva <strong>v-html</html>'"></p>
 		<hr>
 		<p v-destaque="'red'"> Usando diretiva personalizada </p>  <!-- f5 navegador -->
+		<p v-destaque="cor"> Usando diretiva personalizada </p>  
 	</div>
 </template>
 
 <script>
 export default {
-	
+	  data() {
+		  return {
+			  cor: 'green'
+		  }
+	  }
 }
 </script>
 

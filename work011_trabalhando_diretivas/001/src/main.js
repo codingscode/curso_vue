@@ -4,7 +4,9 @@ import App from './App.vue'
 Vue.config.productionTip = false
 
 Vue.directive('destaque', {
-
+	bind(el, binding, vnode) {        //binding e vnode nesse caso podem ser omitidos
+		el.style.backgroundColor = 'lightgreen'
+	}
 })
 
 new Vue({

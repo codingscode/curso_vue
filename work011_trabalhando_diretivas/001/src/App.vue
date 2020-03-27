@@ -1,6 +1,9 @@
 <template>
 	<div id="app">
 		<h1>Diretivas</h1>
+		<hr>
+		<p v-text="'Usando diretiva v-text'"></p> <!-- experimentar usar 'Usando diretiva <strong>v-text</html>'  -->
+		<p v-html="'Usando diretiva <strong>v-html</html>'"></p>
 	</div>
 </template>
 
@@ -21,3 +24,4 @@ export default {
 	font-size: 2.5rem;
 }
 </style>
+<!-- inspecionar elements -->

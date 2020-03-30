@@ -5,12 +5,14 @@
 		<p v-text="'Usando diretiva v-text'"></p> <!-- experimentar usar 'Usando diretiva <strong>v-text</html>'  -->
 		<p v-html="'Usando diretiva <strong>v-html</strong>'"></p>
 		<hr>
-		<p v-destaque:fundo.atrasar="'orange'"> Usando diretiva personalizada </p>  <!-- f5 navegador -->
-		<p v-destaque="cor"> Usando diretiva personalizada </p>   <!-- experimentar :fundo -->
+		<p v-destaque:fundo.atrasar="'orange'"> Usando diretiva personalizada 1</p>  <!-- f5 navegador -->
+		<p v-destaque="cor"> Usando diretiva personalizada 2</p>   <!-- experimentar :fundo -->
 		<hr>
-		<p v-destaque-local:fundo.atrasar="'purple'"> Usando diretiva personalizada </p>  <!-- f5 navegador -->
-		<p v-destaque-local="cor"> Usando diretiva personalizada </p>   <!-- experimentar :fundo -->
-		<p v-destaque-local.alternar="cor"> Usando diretiva personalizada </p>   <!-- experimentar :fundo -->
+		<p v-destaque-local:fundo.atrasar.alternar="{cor1: 'yellow', cor2: 'lightgreen', atraso: 2000, intervalo: 200}">
+			  Usando diretiva personalizada 3</p>  <!-- f5 navegador -->
+		<p v-destaque-local="cor"> Usando diretiva personalizada 4</p>   <!-- experimentar :fundo -->
+		<p v-destaque-local.atrasar="{cor1: 'red', atraso: 5000}"> Usando diretiva personalizada 5</p>   <!-- experimentar :fundo -->
+		
 	</div>
 </template>
 
@@ -31,12 +33,12 @@ export default {
                 }
 
 				let atraso = 0
-				if (binding.modifiers['atrasar']) atraso = 3000
+				if (binding.modifiers['atrasar']) atraso = binding.value.atraso
 
 				
 
-                const cor1 = binding.value
-				const cor2 = 'blue'
+                const cor1 = binding.value.cor1
+				const cor2 = binding.value.cor2
 				let corAtual = cor1
  
 				setTimeout(() => {
@@ -44,10 +46,10 @@ export default {
                          setInterval(() => {
 							 corAtual = corAtual === cor1 ? cor2 : cor1
                              aplicarCor(corAtual)
-						 }, 1000)
+						 }, binding.value.intervalo)
                     }
 					else {
-                        aplicarCor(binding.value)
+                        aplicarCor(binding.value.cor1)
 					} 
                 }, atraso)
 				

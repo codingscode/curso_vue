@@ -4,12 +4,26 @@
 		<hr>
 		<!-- Exercício -->
 		<!-- Escreva uma diretiva que funcione com o v-on (escute eventos) -->
+		<button v-quando="acao" >Executar</button>
 	</div>
 </template>
 
 <script>
 export default {
-	
+	 directives: {
+		quando: {
+			bind(el, binding) {
+			  el.onclick = function(e) {
+			     binding.value()
+	          }
+			}
+		}
+	 },
+     methods: {
+		acao() {
+			alert('Ação executada!')
+		}
+     }
 }
 </script>
 

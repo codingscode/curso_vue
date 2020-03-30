@@ -5,7 +5,9 @@
 		<!-- Exercício -->
 		<!-- Escreva uma diretiva que funcione com o v-on (escute eventos) -->
 		<button v-quando:click="acao" >Executar</button>
-		<p v-quando:mouseenter="mouseEnter">Teste mouse event</p> <!-- curso sobre isso dispara -->
+		<p v-quando:mouseenter="mouseEnter" v-quando:mouseleave="mouseSai">
+			Teste mouse event
+		</p> <!-- curso sobre isso dispara -->
 	</div>
 </template>
 
@@ -30,6 +32,10 @@ export default {
 		mouseEnter() {
 			alert('vc passou o cursor!')
 			console.log('Mouse enter, passou o cursor')
+		},
+		mouseSai() {
+			alert('vc tirou o cursor!')
+			console.log('Mouse enter, tirou o cursor')
 		}
      }
 }

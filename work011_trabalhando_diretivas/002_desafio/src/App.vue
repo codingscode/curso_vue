@@ -4,7 +4,7 @@
 		<hr>
 		<!-- Exercício -->
 		<!-- Escreva uma diretiva que funcione com o v-on (escute eventos) -->
-		<button v-quando="acao" >Executar</button>
+		<button v-quando:click="acao" >Executar</button>
 	</div>
 </template>
 
@@ -13,9 +13,12 @@ export default {
 	 directives: {
 		quando: {
 			bind(el, binding) {
-			  el.onclick = function(e) {
-			     binding.value()
-	          }
+			   //el.onclick = function(e) {
+			      //binding.value()
+			   //}
+			   const tipo = binding.arg
+			   const fn = binding.value
+			   el.addEventListener(tipo, fn)
 			}
 		}
 	 },

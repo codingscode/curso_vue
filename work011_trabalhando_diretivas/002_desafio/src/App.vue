@@ -5,6 +5,7 @@
 		<!-- Exercício -->
 		<!-- Escreva uma diretiva que funcione com o v-on (escute eventos) -->
 		<button v-quando:click="acao" >Executar</button>
+		<p v-quando:mouseenter="mouseEnter">Teste mouse event</p> <!-- curso sobre isso dispara -->
 	</div>
 </template>
 
@@ -25,6 +26,10 @@ export default {
      methods: {
 		acao() {
 			alert('Ação executada!')
+		},
+		mouseEnter() {
+			alert('vc passou o cursor!')
+			console.log('Mouse enter, passou o cursor')
 		}
      }
 }

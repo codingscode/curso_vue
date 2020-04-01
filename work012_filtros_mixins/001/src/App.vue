@@ -4,11 +4,16 @@
 		<hr>
 		<p>{{cpf | cpf_masc | inverter}}</p>
 		<input type="text" :value="cpf | cpf_masc">  <!-- experimentar tirar | cpf_masc -->
+		<hr>
+		<Frutas />
 	</div>
 </template>
 
 <script>
+import Frutas from './Frutas.vue'
+
 export default {
+	  components: {Frutas},
 	  filters: {
 		cpf_masc(valor) {
 			const arr = valor.split('')

@@ -6,6 +6,13 @@
 		<input type="text" :value="cpf | cpf_masc">  <!-- experimentar tirar | cpf_masc -->
 		<hr>
 		<Frutas />
+		<hr>
+		<div>
+			<ul>
+			    <li v-for="fruta in frutas" :key="fruta">{{fruta}}</li>
+			</ul>
+			<input type="text" v-model="fruta" @keydown.enter="add">
+        </div>
 	</div>
 </template>
 
@@ -25,9 +32,17 @@ export default {
 	  },
       data() {
 	     return {
-			cpf: '90261437893'
+			cpf: '90261437893',
+			fruta: '',
+            frutas: ['banana', 'maçã', 'laranja']
 		 }
-	  }
+	  },
+	  methods: {
+          add() {
+              this.frutas.push(this.fruta)
+              this.fruta = ''
+          }
+      }
 }
 </script>
 

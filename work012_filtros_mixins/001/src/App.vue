@@ -3,6 +3,7 @@
 		<h1>Filtros & Mixins</h1>
 		<hr>
 		<p>{{cpf | cpf_masc | inverter}}</p>
+		<input type="text" :value="cpf | cpf_masc">  <!-- experimentar tirar | cpf_masc -->
 	</div>
 </template>
 
@@ -34,5 +35,9 @@ export default {
 	color: #2c3e50;
 	margin-top: 60px;
 	font-size: 2.5rem;
+}
+
+input {
+   font-size: 2.5rem;
 }
 </style>

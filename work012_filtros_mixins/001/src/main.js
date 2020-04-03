@@ -10,6 +10,11 @@ Vue.filter('inverter', function(valor) {
 Vue.mixin({
     created() {
        console.log('Created - Mixin Global!')
+    },
+    data() {
+        return {
+           global: 'Estou no Mixin Global'
+        }
     }
 })
 

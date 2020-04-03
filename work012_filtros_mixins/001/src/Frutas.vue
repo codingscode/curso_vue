@@ -1,7 +1,7 @@
 <template>
      <div>
          <ul>
-          <li v-for="fruta in frutas" :key="fruta">{{fruta}}</li>
+          <li v-for="cada in frutas" :key="cada">{{cada}}</li>
          </ul>
          <input type="text" v-model="fruta" @keydown.enter="add">
      </div>

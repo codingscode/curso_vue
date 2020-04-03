@@ -10,7 +10,7 @@
 		<hr>
 		<div>
 			<ul>
-			    <li v-for="fruta in frutas" :key="fruta">{{fruta}}</li>
+			    <li v-for="cada in frutas" :key="cada">{{cada}}</li>
 			</ul>
 			<input type="text" v-model="fruta" @keydown.enter="add">
         </div>
@@ -39,6 +39,9 @@ export default {
 			cpf: '90261437893',
 			frutas: ['abacate']   //prioridade
 		 }
+	  },
+	  created() {
+	  	 console.log('Created - App.vue!')
 	  }
 }
 </script>

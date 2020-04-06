@@ -5,6 +5,7 @@
 		<!-- Construir um filtro local que troca espaços por vírgula -->
 		<p>{{frase | espaco-por-virgula}}</p>
 		<p>{{frase | espacoPorVirgula}}</p>
+		<hr>
 		
 		<!-- Exercício 2 -->
 		<!-- Filtro global que conta o tamanho de cada palavra e adiciona o 
@@ -12,9 +13,12 @@
 		<!-- "Pedro é legal" => "Pedro (5) é (1) legal (5)" -->
         <p>{{frase | contar-palavras}}</p>
 		<p>{{frase | contarPalavras}}</p>
+		<hr>
 
 		<!-- Exercício 3 -->
-		<!-- Implementar os exercicios 2 com propriedade computada -->
+		<!-- Implementar os exercicios 1 e 2 com propriedade computada -->
+		<p>{{fraseComVirgulas}}</p>
+		<p>{{fraseComTamanhos }}</p>
 
 		<!-- Exercício 4 -->
 		<!-- Compartilhe a propriedade computada via mixin -->
@@ -31,6 +35,14 @@ export default {
 	 filters: {
 		espacoPorVirgula(valor) {
 			return valor.replace(/ /g, ',')    //espaço vazio pode ser também '\s'
+		}
+	 },
+	 computed: {
+		fraseComVirgulas() {
+	   	    return this.frase.replace(/\s/g, ',')
+		},
+		fraseComTamanhos() {
+		    return this.frase.split(' ').map(p => `${p} (${p.length})`).join(' ')
 		}
 	 }
 }

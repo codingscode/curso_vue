@@ -3,6 +3,8 @@
 		<h1>Filtros & Mixins (Desafio)</h1>
 		<!-- Exercício 1 -->
 		<!-- Construir um filtro local que troca espaços por vírgula -->
+		<p>{{frase | espaco-por-virgula}}</p>
+		<p>{{frase | espacoPorVirgula}}</p>
 		
 		<!-- Exercício 2 -->
 		<!-- Filtro global que conta o tamanho de cada palavra e adiciona o 
@@ -19,7 +21,16 @@
 
 <script>
 export default {
-	
+	 data() {
+		return {
+			frase: 'Essa é a frase que será usada nos desafios.'
+		}
+	 },
+	 filters: {
+		espacoPorVirgula(valor) {
+			return valor.replace(/ /g, ',')    //espaço vazio pode ser também '\s'
+		}
+	 }
 }
 </script>
 

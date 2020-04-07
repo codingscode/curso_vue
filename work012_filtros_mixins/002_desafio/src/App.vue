@@ -26,7 +26,10 @@
 </template>
 
 <script>
+import frasesMixin from './frasesMixin.js'
+
 export default {
+	 mixins: [frasesMixin],
 	 data() {
 		return {
 			frase: 'Essa é a frase que será usada nos desafios.'
@@ -36,15 +39,8 @@ export default {
 		espacoPorVirgula(valor) {
 			return valor.replace(/ /g, ',')    //espaço vazio pode ser também '\s'
 		}
-	 },
-	 computed: {
-		fraseComVirgulas() {
-	   	    return this.frase.replace(/\s/g, ',')
-		},
-		fraseComTamanhos() {
-		    return this.frase.split(' ').map(p => `${p} (${p.length})`).join(' ')
-		}
 	 }
+	 
 }
 </script>
 

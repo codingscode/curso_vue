@@ -3,11 +3,11 @@
 		<h1>Animações</h1>
 		<hr>
 		<b-button variant="primary" class="mb-4" @click="exibir = !exibir">Mostrar Mensagem</b-button>
-		<transition name="fade">   transition sozinho n gera efeito algum 
+		<transition name="fade" appear>   <!-- transition sozinho n gera efeito algum  -->
              <b-alert variant="info" show v-if="exibir">{{msg}}</b-alert>
 		</transition>
 		
-		<transition name="slide" type="animation">   <!-- experimentar trocar animation por transition -->
+		<transition name="slide" type="animation" appear>   <!-- experimentar trocar animation por transition -->
              <b-alert variant="info" show v-show="exibir">{{msg}}</b-alert>
 		</transition>
 		
@@ -20,7 +20,7 @@ export default {
      data() {
 		return {
 			msg: 'Uma mensagem de informação para o usuário!',
-			exibir: false
+			exibir: true
 		}
 	 }
 }

@@ -3,16 +3,16 @@
 		<h1>Animações</h1>
 		<hr>
 		<b-button variant="primary" class="mb-4" @click="exibir = !exibir">Mostrar Mensagem</b-button>
-		<transition name="fade" appear>   <!-- transition sozinho n gera efeito algum  -->
+		<!--<transition name="fade" appear>   
              <b-alert variant="info" show v-if="exibir">{{msg}}</b-alert>
 		</transition>
 		
-		<transition name="slide" type="animation" appear>   <!-- experimentar trocar animation por transition -->
+		<transition name="slide" type="animation" appear>   
              <b-alert variant="info" show v-show="exibir">{{msg}}</b-alert>
 		</transition>
 		<transition enter-active-class="animated bounce" leave-active-class="animated shake">   
              <b-alert variant="info" show v-show="exibir">{{msg}}</b-alert>
-		</transition>
+		</transition> -->
 		<hr>
 		<b-select v-model="tipoAnimacao" class="mb-4">
 			 <option value="fade">Fade</option>
@@ -20,7 +20,8 @@
 		</b-select>
 
 		<transition :name="tipoAnimacao">
-             <b-alert variant="info" show v-show="exibir">{{msg}}</b-alert>
+             <b-alert variant="info" show v-if="exibir" key="info">{{msg}}</b-alert>
+             <b-alert variant="warning" show v-else key="warn">{{msg}}</b-alert>
 		</transition>
 	</div>
 </template>

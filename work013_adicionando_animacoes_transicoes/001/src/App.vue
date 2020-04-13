@@ -27,6 +27,7 @@
 		<hr>
 		<button @click="exibir2 = !exibir2">Mostrar</button>
 		<transition
+		     :css="false"
 		     @before-enter="antesEntrar" @enter="entrar" @after-enter="depoisEntrar" @enter-cancelled="entrarCancelado"
 
 			 @before-leave="antesSair" @leave="sair" @after-leave="depoisSair" @leave-cancelled="sairCancelado">

@@ -50,7 +50,8 @@ export default {
 	 },
 	 methods: {
 		 antesEntrar(el) {
-            console.log('antesEntrar')
+            this.larguraBase = 0
+			el.style.width = `${this.larguraBase}px`
 		 },
 		 entrar(el, done) {
 			let rodada = 1

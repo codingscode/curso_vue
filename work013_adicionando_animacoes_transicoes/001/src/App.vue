@@ -52,7 +52,7 @@ export default {
 		 },
 		 entrar(el, done) {
 			console.log('entrar')
-			//done()
+			done()
 		 },
 		 depoisEntrar(el) {
 			 console.log('depoisEntrar')
@@ -65,7 +65,7 @@ export default {
 		 },
 		 sair(el, done) {
 			console.log('sair')
-			//done()
+			done()
 		 },
 		 depoisSair(el) {
 			 console.log('depoisSair')

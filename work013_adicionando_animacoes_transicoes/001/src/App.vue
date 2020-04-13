@@ -25,7 +25,7 @@
 		</transition>
 
 		<hr>
-		<button @click="exibir2 = !exibir2">Mostrar</button>
+		<button @click="exibir2 = !exibir2">Alternar</button>
 		<transition
 		     :css="false"
 		     @before-enter="antesEntrar" @enter="entrar" @after-enter="depoisEntrar" @enter-cancelled="entrarCancelado"
@@ -44,7 +44,8 @@ export default {
 			msg: 'Uma mensagem de informação para o usuário!',
 			exibir: false,
 			exibir2: true,
-			tipoAnimacao: 'fade'
+			tipoAnimacao: 'fade',
+			larguraBase: 0
 		}
 	 },
 	 methods: {
@@ -52,8 +53,16 @@ export default {
             console.log('antesEntrar')
 		 },
 		 entrar(el, done) {
-			console.log('entrar')
-			done()
+			let rodada = 1
+			const temporizador = setInterval(() => {
+				const novaLargura = this.larguraBase + rodada*10
+				el.style.width = `${novaLargura}px`
+				rodada++
+				if(rodada>30) {
+					clearInterval(temporizador)
+					done()
+				}
+			}, 20)
 		 },
 		 depoisEntrar(el) {
 			 console.log('depoisEntrar')

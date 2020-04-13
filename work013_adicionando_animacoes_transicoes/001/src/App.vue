@@ -23,6 +23,15 @@
              <b-alert variant="info" show v-if="exibir" key="info">{{msg}}</b-alert>
              <b-alert variant="warning" show v-else key="warn">{{msg}}</b-alert>
 		</transition>
+
+		<hr>
+		<button @click="exibir2 = !exibir2">Mostrar</button>
+		<transition
+		     @before-enter="antesEntrar" @enter="entrar" @after-enter="depoisEntrar" @enter-cancelled="entrarCancelado"
+
+			 @before-leave="antesSair" @leave="sair" @after-leave="depoisSair" @leave-cancelled="sairCancelado">
+			 <div v-if="exibir2" class="caixa"></div>
+		</transition>
 	</div>
 </template>
 
@@ -33,10 +42,40 @@ export default {
 		return {
 			msg: 'Uma mensagem de informação para o usuário!',
 			exibir: false,
+			exibir2: true,
 			tipoAnimacao: 'fade'
 		}
+	 },
+	 methods: {
+		 antesEntrar(el) {
+            console.log('antesEntrar')
+		 },
+		 entrar(el, done) {
+			console.log('entrar')
+			//done()
+		 },
+		 depoisEntrar(el) {
+			 console.log('depoisEntrar')
+		 },
+		 entrarCancelado(el) {
+             console.log('entrarCancelado')
+		 },
+		 antesSair(el) {
+            console.log('antesSair')
+		 },
+		 sair(el, done) {
+			console.log('sair')
+			//done()
+		 },
+		 depoisSair(el) {
+			 console.log('depoisSair')
+		 },
+		 sairCancelado(el) {
+             console.log('sairCancelado')
+		 }
 	 }
 }
+// ver console
 </script>
 
 <style>
@@ -82,5 +121,11 @@ export default {
      opacity: 0;
 }
 
+.caixa {
+   height: 100px;
+   width: 300px;
+   margin: 30px auto;
+   background-color: orange;
+}
 
 </style>

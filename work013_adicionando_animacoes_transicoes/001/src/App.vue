@@ -38,8 +38,10 @@
              <b-button variant="primary" @click="componenteSelecionado = 'AlertaInfo'" class="mr-2">Info</b-button>
  		     <b-button variant="secondary" @click="componenteSelecionado = 'AlertaAdvertencia'">Advertência</b-button>
 		</div>
+		<transition name="fade" mode="out-in">
+            <component :is="componenteSelecionado"></component>
+		</transition>
 		
-		<component :is="componenteSelecionado"></component>
 	</div>
 </template>
 

@@ -71,11 +71,20 @@ export default {
              console.log('entrarCancelado')
 		 },
 		 antesSair(el) {
-            console.log('antesSair')
+			this.larguraBase = 300
+			el.style.width = `${this.larguraBase}px`
 		 },
 		 sair(el, done) {
-			console.log('sair')
-			done()
+			 let rodada = 1
+			 const temporizador = setInterval(() => {
+				const novaLargura = this.larguraBase - rodada*10
+				el.style.width = `${novaLargura}px`
+				rodada++
+				if(rodada>30) {
+					clearInterval(temporizador)
+					done()
+				}
+			 }, 20)
 		 },
 		 depoisSair(el) {
 			 console.log('depoisSair')

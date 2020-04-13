@@ -33,19 +33,30 @@
 			 @before-leave="antesSair" @leave="sair" @after-leave="depoisSair" @leave-cancelled="sairCancelado">
 			 <div v-if="exibir2" class="caixa"></div>
 		</transition>
+		<hr>
+		<div class="mb-4">
+             <b-button variant="primary" @click="componenteSelecionado = 'AlertaInfo'" class="mr-2">Info</b-button>
+ 		     <b-button variant="secondary" @click="componenteSelecionado = 'AlertaAdvertencia'">Advertência</b-button>
+		</div>
+		
+		<component :is="componenteSelecionado"></component>
 	</div>
 </template>
 
 <script>
+import AlertaAdvertencia from './AlertaAdvertencia'
+import AlertaInfo from './AlertaInfo'
 
 export default {
+	 components: {AlertaAdvertencia, AlertaInfo},
      data() {
 		return {
 			msg: 'Uma mensagem de informação para o usuário!',
 			exibir: false,
 			exibir2: true,
 			tipoAnimacao: 'fade',
-			larguraBase: 0
+			larguraBase: 0,
+			componenteSelecionado: 'AlertaInfo'
 		}
 	 },
 	 methods: {

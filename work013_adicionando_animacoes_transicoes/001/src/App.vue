@@ -42,8 +42,9 @@
             <component :is="componenteSelecionado"></component>
 		</transition>
 		<hr>
-		<b-list-group v-for="aluno in alunos" :key="aluno">
-  		    <b-list-group-item>{{aluno}}</b-list-group-item>
+		<b-button @click="adicionarAluno" class="mb-4">Adicionar Aluno</b-button>
+		<b-list-group v-for="(aluno, i) in alunos" :key="aluno">
+  		    <b-list-group-item @click="removerAluno(i)">{{aluno}}</b-list-group-item> <!-- clicando remover -->
 		</b-list-group>
 	</div>
 </template>

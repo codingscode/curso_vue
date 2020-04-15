@@ -41,7 +41,10 @@
 		<transition name="fade" mode="out-in">
             <component :is="componenteSelecionado"></component>
 		</transition>
-		
+		<hr>
+		<b-list-group v-for="aluno in alunos" :key="aluno">
+  		    <b-list-group-item>{{aluno}}</b-list-group-item>
+		</b-list-group>
 	</div>
 </template>
 
@@ -53,6 +56,7 @@ export default {
 	 components: {AlertaAdvertencia, AlertaInfo},
      data() {
 		return {
+			alunos: ['Roberto', 'Simon', 'Esther', 'Paola'],
 			msg: 'Uma mensagem de informação para o usuário!',
 			exibir: false,
 			exibir2: true,
@@ -62,6 +66,13 @@ export default {
 		}
 	 },
 	 methods: {
+		 adicionarAluno() {
+			const s = Math.random().toString(36).substring(2)
+			this.alunos.push(s)
+		 },
+		 removerAluno(indice) {
+			this.alunos.splice(indice, 1)
+		 },
 		 animar(el, done, negativo) {
             let rodada = 1
 			const temporizador = setInterval(() => {

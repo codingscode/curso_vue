@@ -1,9 +1,9 @@
 <template>
 	<div id="app" class="container-fluid">
 		<h1>Animações</h1>
-		<hr>
+		<!--<hr>
 		<b-button variant="primary" class="mb-4" @click="exibir = !exibir">Mostrar Mensagem</b-button>
-		<!--<transition name="fade" appear>   
+		<transition name="fade" appear>   
              <b-alert variant="info" show v-if="exibir">{{msg}}</b-alert>
 		</transition>
 		
@@ -12,7 +12,7 @@
 		</transition>
 		<transition enter-active-class="animated bounce" leave-active-class="animated shake">   
              <b-alert variant="info" show v-show="exibir">{{msg}}</b-alert>
-		</transition> -->
+		</transition> 
 		<hr>
 		<b-select v-model="tipoAnimacao" class="mb-4">
 			 <option value="fade">Fade</option>
@@ -40,7 +40,7 @@
 		</div>
 		<transition name="fade" mode="out-in">
             <component :is="componenteSelecionado"></component>
-		</transition>
+		</transition> -->
 		<hr>
 		<b-button @click="adicionarAluno" class="mb-4">Adicionar Aluno</b-button>
 		<transition-group name="slide">
@@ -155,6 +155,7 @@ export default {
 }
 
 .slide-leave-active {
+   position: absolute;
    animation: slide-out 2s ease;
    transition: opacity 2s;
 }
@@ -168,6 +169,10 @@ export default {
    width: 300px;
    margin: 30px auto;
    background-color: orange;
+}
+
+.slide-move {
+   transition: transform 1s;
 }
 
 </style>

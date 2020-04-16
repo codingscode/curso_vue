@@ -43,7 +43,7 @@
 		</transition> -->
 		<hr>
 		<b-button @click="adicionarAluno" class="mb-4">Adicionar Aluno</b-button>
-		<transition-group name="slide">
+		<transition-group name="slide" tag="div"> <!-- experimentar tirar tag-->
 			  <b-list-group v-for="(aluno, i) in alunos" :key="aluno">
   		          <b-list-group-item @click="removerAluno(i)">{{aluno}}</b-list-group-item> <!-- clicando remover -->
 		      </b-list-group>
@@ -156,6 +156,7 @@ export default {
 
 .slide-leave-active {
    position: absolute;
+   width: 100%;
    animation: slide-out 2s ease;
    transition: opacity 2s;
 }

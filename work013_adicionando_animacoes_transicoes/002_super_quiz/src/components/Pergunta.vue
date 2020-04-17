@@ -1,12 +1,23 @@
 <template>
     <div class="pergunta">
-        
+        <span>{{pergunta.texto}}</span>
+        <ul class="respostas">
+            <li v-for="(resposta, i) in pergunta.respostas" :key="resposta.texto">
+                <span class="numero">{{i+1}}</span>
+                <span class="texto">{{resposta.texto}}</span>
+            </li>
+        </ul>
     </div>
 </template>
 
 <script>
 export default {
-    
+        props: {
+            pergunta: {
+                type: Object,
+                required: true
+            }
+        }    
 }
 </script>
 
@@ -50,7 +61,7 @@ export default {
         border-bottom-left-radius: 8px;
     }
 
-    .respostas .text {
+    .respostas .texto {
         flex: 1;
         align-self: center;
     }

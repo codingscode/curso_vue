@@ -1,12 +1,26 @@
 <template>
 	<div id="app">
 		<h1>Super Quiz</h1>
+		<Pergunta v-if="perguntaModo" :pergunta="perguntas[perguntaAtual]" />
+		<resultado v-else :resultado="resultado" />
 	</div>
 </template>
 
 <script>
-export default {
+import perguntas from './util/perguntas'
+import Pergunta from './components/Pergunta.vue'
+import Resultado from './components/Resultado.vue'
 
+export default {
+	 components: {Pergunta, Resultado},
+	 data() {
+		 return {
+			 resultado: false,
+			 perguntaModo: true,
+			 perguntas: perguntas,    // ou apenas perguntas.         chave e valor mesmo nome
+			 perguntaAtual: 0
+		 }
+	 }
 }
 </script>
 

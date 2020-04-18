@@ -1,8 +1,8 @@
 <template>
 	<div id="app">
 		<h1>Super Quiz</h1>
-		<Pergunta v-if="perguntaModo" :pergunta="perguntas[perguntaAtual]" />
-		<resultado v-else :resultado="resultado" />
+		<Pergunta v-if="perguntaModo" :pergunta="perguntas[perguntaAtual]" @respondido="mostrarResultado"/>
+		<resultado v-else :resultado="resultado" @confirmado="proximaPergunta" />
 	</div>
 </template>
 
@@ -20,7 +20,18 @@ export default {
 			 perguntas: perguntas,    // ou apenas perguntas.         chave e valor mesmo nome
 			 perguntaAtual: 0
 		 }
-	 }
+	 },
+     methods: {
+        mostrarResultado(resultado) {
+            this.resultado = resultado
+            this.perguntaModo = false
+        },
+        proximaPergunta() {
+            let r = Math.random()*this.perguntas.length
+            this.perguntaAtual = parseInt(r)
+            this.perguntaModo = true
+        }
+     }
 }
 </script>
 

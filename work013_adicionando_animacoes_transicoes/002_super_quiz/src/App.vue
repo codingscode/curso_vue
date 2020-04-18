@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<h1>Super Quiz</h1>
-		<transition name="flip">
+		<transition name="flip" mode="out-in">
             <Pergunta v-if="perguntaModo" :pergunta="perguntas[perguntaAtual]" @respondido="mostrarResultado"/>
 		    <resultado v-else :resultado="resultado" @confirmado="proximaPergunta" />
 		</transition>

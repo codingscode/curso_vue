@@ -1,8 +1,11 @@
 <template>
 	<div id="app">
 		<h1>Super Quiz</h1>
-		<Pergunta v-if="perguntaModo" :pergunta="perguntas[perguntaAtual]" @respondido="mostrarResultado"/>
-		<resultado v-else :resultado="resultado" @confirmado="proximaPergunta" />
+		<transition name="flip">
+            <Pergunta v-if="perguntaModo" :pergunta="perguntas[perguntaAtual]" @respondido="mostrarResultado"/>
+		    <resultado v-else :resultado="resultado" @confirmado="proximaPergunta" />
+		</transition>
+		
 	</div>
 </template>
 
@@ -58,21 +61,21 @@ body {
 	font-size: 4rem;
 }
 
-@keyframes flip-out {
+@keyframes flip-out {     /* + */
 	from { transform: rotateY(0deg); }
 	to { transform: rotateY(90deg); }
 }
 
-@keyframes flip-in {
+@keyframes flip-in {     /* + */
 	from { transform: rotateY(90deg); }
 	to { transform: rotateY(0deg); }
 }
 
-.flip-enter-active {
+.flip-enter-active {        /* + */
 	animation: flip-in 0.3s ease;
 }
 
-.flip-leave-active {
+.flip-leave-active {        /* + */
 	animation: flip-out 0.3s ease;
 }
 </style>

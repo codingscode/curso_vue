@@ -6,7 +6,14 @@
 
 <script>
 export default {
+     created() {
+		 console.log('executando...')
+		 this.$http.post('usuarios.json', {      // verificar firebase e console
+				nome: 'Fulanis',
+				email: 'fulanis_fulanis@gmail.com'
+		  }).then(res => console.log(res))
 
+	 }
 }
 </script>
 

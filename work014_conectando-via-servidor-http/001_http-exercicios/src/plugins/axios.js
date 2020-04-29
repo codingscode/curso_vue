@@ -11,8 +11,13 @@ Vue.use({
        })
 
        Vue.prototype.$http.interceptors.request.use(config => {
+            
+            if (config.method == 'post') {
+               config.method = 'put'
+            }
             console.log('config aê: ' + config.method)
             return config
+            
        })
     }
 })

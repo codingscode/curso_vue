@@ -27,6 +27,11 @@ export default {
 	 methods: {
 		salvar() {
 		   console.log(this.usuario)   // ver console
+		   this.$http.post('usuarios.json', this.usuario)
+			  .then(resp => {
+				this.usuario.nome = ''
+				this.usuario.email = ''
+			  })
 		}
 	 }
      /*created() {

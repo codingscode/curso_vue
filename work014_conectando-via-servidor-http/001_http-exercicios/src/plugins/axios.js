@@ -13,9 +13,7 @@ Vue.use({
        Vue.prototype.$http = axios.create({
            baseURL: 'https://curso-vue-25e73.firebaseio.com/',
            headers: {     // em Network -> Headers
-                get: {
-                   "Authorization": "123"
-                }
+               "Authorization": "123"
            }
        })
 

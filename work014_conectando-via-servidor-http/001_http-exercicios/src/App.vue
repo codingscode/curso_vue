@@ -50,7 +50,7 @@ export default {
 				   this.usuarios = res.data
 				   console.log(this.usuarios)
 			   })
-		   this.$http.defaults.headers.common['Authorization'] = '123'   // da 2ª em diante aparece o 'authoriza....
+		   //this.$http.defaults.headers.common['Authorization'] = '123'   // da 2ª em diante aparece o 'authoriza....
 		}
 	 }
      /*created() {

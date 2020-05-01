@@ -40,9 +40,13 @@ export default {
 	 methods: {
 		salvar() {
 		   console.log(this.usuario)   // ver console
-		   this.$http.post('usuarios.json', this.usuario)
-			  .then(() => this.limpar())
-		},
+		   /*this.$http.post('usuarios.json', this.usuario)
+			  .then(() => this.limpar()) */
+		   const metodo = this.id ? 'patch' : 'post'
+		   const finalUrl = this.id ? `/${this.id}.json` : '.json'
+		   this.$http[metodo](`/usuarios${finalUrl}`, this.usuario)
+			.then(_ => this.limpar())
+        },
 		obterUsuarios() {
 		   this.$http.get('usuarios.json')   // ou this.$http(..........
 		       .then(res => {

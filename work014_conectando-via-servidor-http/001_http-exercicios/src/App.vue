@@ -18,7 +18,8 @@
                 <strong>Nome: </strong> {{usuario.nome}}<br>
                 <strong>E-mail: </strong> {{usuario.email}}<br>
                 <strong>ID: </strong> {{id}}<br>
-                
+                <b-button variant="warning" size="lg" @click="carregar(id)">Carregar</b-button>
+                <b-button variant="danger" size="lg" class="ml-2" @click="excluir(id)">Excluir</b-button>
 			</b-list-group-item>
 		</b-list-group>
 	</div>
@@ -29,6 +30,7 @@ export default {
 	 data() {
 		return {
 			usuarios: [],
+			id: null,
 			usuario: {
 				nome: '',
 				email: ''
@@ -39,10 +41,7 @@ export default {
 		salvar() {
 		   console.log(this.usuario)   // ver console
 		   this.$http.post('usuarios.json', this.usuario)
-			  .then(resp => {
-				this.usuario.nome = ''
-				this.usuario.email = ''
-			  })
+			  .then(() => this.limpar())
 		},
 		obterUsuarios() {
 		   this.$http.get('usuarios.json')   // ou this.$http(..........
@@ -51,6 +50,19 @@ export default {
 				   console.log(this.usuarios)
 			   })
 		   //this.$http.defaults.headers.common['Authorization'] = '123'   // da 2ª em diante aparece o 'authoriza....
+		},
+		limpar() {
+			this.usuario.nome = ''
+			this.usuario.email = ''
+			this.id = null
+		},
+		carregar(id) {
+			this.id = id
+			this.usuario = {...this.usuarios[id]}
+		},
+		excluir(id) {
+			this.$http.delete(`/usuarios/${id}.json`)
+				.then(() => this.limpar())
 		}
 	 }
      /*created() {

@@ -3,11 +3,20 @@ import axios from 'axios'
 
 //axios.defaults.baseURL= 'https://curso-vue-25e73.firebaseio.com/'
 
+
+//axios.defaults.headers.common['Authorization'] = '123'
+//axios.defaults.headers.get['Accepts'] = 'application/json'
+
 Vue.use({
     install(Vue) {
        //Vue.prototype.$http = axios
        Vue.prototype.$http = axios.create({
-           baseURL: 'https://curso-vue-25e73.firebaseio.com/'
+           baseURL: 'https://curso-vue-25e73.firebaseio.com/',
+           headers: {     // em Network -> Headers
+                get: {
+                   "Authorization": "123"
+                }
+           }
        })
 
        Vue.prototype.$http.interceptors.request.use(config => {

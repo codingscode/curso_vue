@@ -20,12 +20,12 @@ Vue.use({
        }, error => Promise(error))
 
        Vue.prototype.$http.interceptors.response.use(res => {
-            const matriz = []
+            /*const matriz = []
             for (let chave in res.data) {
                 matriz.push({id: chave, ...res.data[chave]})  // ou nome: res.data[chave].nome, email: res.data[chave].email
             }
         
-            res.data = matriz
+            res.data = matriz*/
             return res
        }, error => Promise.reject(error))
      

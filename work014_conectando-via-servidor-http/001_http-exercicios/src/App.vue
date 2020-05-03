@@ -76,9 +76,14 @@ export default {
 			this.usuario = {...this.usuarios[id]}
 		},
 		excluir(id) {
-			this.$http.delete(`/usuarios/${id}.json`)
+			this.$http.delete(`/usuarios/${id}`)
 				.then(() => this.limpar())
-				
+				.catch(err => {
+					this.mensagens.push({
+						texto: 'Problema para excluir!',
+						tipo: 'danger'
+					})
+				})
 		}
 	 }
      /*created() {

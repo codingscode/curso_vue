@@ -1,0 +1,94 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(to right, #9bc400, #3d7c47, #4cb69f);
+    color: #FFF;
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    margin: 10px 0px;
+    font-weight: 300;
+}
+
+.menu ul {
+    display: flex;    
+    background-color: #777;
+    list-style: none;
+    padding: 0;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.menu li {
+    flex: 1;
+}
+
+.menu a {
+    display: flex;
+    justify-content: center;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.menu .active {
+    background-color: #2392f0;
+}
+
+.menu .active a {
+    color: #FFF;
+}
+
+.menu a {
+    color: #FFF;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    outline: none;
+    border: 0;
+}
+
+[sucesso] {
+    color: #FFF;
+    background-color: #47af55;
+}
+
+[sucesso]:hover {
+    background-color: #47af55aa;
+}
+
+[primario] {
+    color: #FFF;
+    background-color: #2392f0;
+}
+
+[primario]:hover {
+    background-color: #2392f0aa;
+}
+
+.lista {
+    list-style: none;
+    padding: 0px;
+    border: 1px solid #FFF;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lista .item-lista {
+    padding: 15px 25px;
+    cursor: pointer;
+}
+
+.lista .item-lista:hover {
+    background-color: #FFF3;
+}
+
+.lista .item-lista:nth-child(n + 2) {
+    border-top: 1px solid #FFF;
+}

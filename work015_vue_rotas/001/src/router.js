@@ -11,7 +11,7 @@ export default new Router({
     mode: 'history', // ou 'hash'
     routes: [
        {path: '/', component: Inicio},
-       {path: '/usuario', component: Usuario}
+       {path: '/usuario/:id', component: Usuario}
     ]
 })
 

@@ -9,22 +9,23 @@
 
 <script>
 export default {
-     data() {
+     props: ['id'],
+     /*data() {
         return {
             id: this.$route.params.id
         }
-     },    
+     },  */  
      methods: {
         irParaInicio() {
             //this.$router.push('/') 
             this.$router.push({path: '/'})  // mesmo do de cima
         }
-     },
-     watch: {   // serve como atualizador
+     }/*,
+     watch: {   // monitora as mudanças
         $route(to, from) {
            this.id = to.params.id
         }
-     }
+     }*/
 }
 // ver localhost:8080/#/usuario   -> Network -> localhost
 // com history localhost:8080/usuario

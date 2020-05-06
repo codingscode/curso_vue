@@ -19,6 +19,11 @@ export default {
             //this.$router.push('/') 
             this.$router.push({path: '/'})  // mesmo do de cima
         }
+     },
+     watch: {   // serve como atualizador
+        $route(to, from) {
+           this.id = to.params.id
+        }
      }
 }
 // ver localhost:8080/#/usuario   -> Network -> localhost

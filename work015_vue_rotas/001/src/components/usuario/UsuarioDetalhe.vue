@@ -2,7 +2,7 @@
     <div class="usuario-detalhe">
         <h3>Usuário Detalhe</h3>
         <p><strong>Código:</strong> {{id}}</p>
-        <router-link tag="button" primario to="/usuario/1/editar">
+        <router-link tag="button" primario :to="`/usuario/${id}/editar`">
             Editar
         </router-link>
     </div>

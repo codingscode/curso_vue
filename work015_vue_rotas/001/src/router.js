@@ -13,7 +13,7 @@ Vue.use(Router)
 export default new Router({
     mode: 'history', // ou 'hash'
     routes: [
-       {path: '/', component: Inicio},
+       {name: 'inicio', path: '/', component: Inicio},
        {path: '/usuario', component: Usuario, props: true,
             children: [
                     {path: '', component: UsuarioLista},

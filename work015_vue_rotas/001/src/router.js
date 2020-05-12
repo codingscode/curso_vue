@@ -7,6 +7,7 @@ import UsuarioDetalhe from './components/usuario/UsuarioDetalhe'
 import UsuarioEditar from './components/usuario/UsuarioEditar'
 import UsuarioLista from './components/usuario/UsuarioLista'
 import Menu from './components/template/Menu'
+import MenuAlt from './components/template/MenuAlt'
 
 
 Vue.use(Router)
@@ -19,7 +20,10 @@ export default new Router({
             menu: Menu
           }
        },
-       {path: '/usuario', component: Usuario, props: true,
+       {path: '/usuario', /* component: Usuario */ components: {
+                 default: Usuario, menu: MenuAlt
+            }
+            , props: true,
             children: [
                     {path: '', component: UsuarioLista},
                     {path: ':id', component: UsuarioDetalhe, props: true},

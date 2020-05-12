@@ -21,7 +21,7 @@ export default new Router({
           }
        },
        {path: '/usuario', /* component: Usuario */ components: {
-                 default: Usuario, menu: MenuAlt
+                 default: Usuario, menu: MenuAlt, menuInferior: MenuAlt
             }
             , props: true,
             children: [

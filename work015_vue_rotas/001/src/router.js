@@ -30,7 +30,8 @@ export default new Router({
                     {path: ':id/editar', component: UsuarioEditar, props: true, name: 'editarUsuario'}
             ]
         },
-        {path: '/redirecionar', redirect: '/usuario'}
+        {path: '/redirecionar', redirect: '/usuario'},
+        {path: '*', redirect: '/'}
     ]
 })
 // experimentar http://localhost:8080/redirecionar

@@ -46,7 +46,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     console.log('antes das rotas -> global*')
-    
+    next()
 })
 
 // experimentar http://localhost:8080/redirecionar

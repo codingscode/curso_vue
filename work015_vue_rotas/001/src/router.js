@@ -38,6 +38,7 @@ const router = new Router({
                     {path: ':id', component: UsuarioDetalhe, props: true, 
                       beforeEnter: (to, from, next) => {
                           console.log('antes da rota -> usuario detalhe')
+                          next()
                       }
                     },
                     {path: ':id/editar', component: UsuarioEditar, props: true, name: 'editarUsuario'}

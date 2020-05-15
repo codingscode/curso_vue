@@ -11,17 +11,12 @@
 
 <script>
 export default {
-     props: ['id']
-     /*data() {
-        return {
-            id: this.$route.params.id
-        }
-     },
-     watch: {   // monitora as mudanças
-        $route(to, from) {
-           this.id = to.params.id
-        }
-     }*/
+     props: ['id'],
+     beforeRouteEnter(to, from, next) {
+        //console.log(this.id)  // dá errp 
+        console.log('dentro do componente -> usuário detalhe')
+        next()
+     }
 }
 </script>
 

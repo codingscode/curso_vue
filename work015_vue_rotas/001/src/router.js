@@ -35,7 +35,11 @@ const router = new Router({
             , props: true,
             children: [
                     {path: '', component: UsuarioLista},
-                    {path: ':id', component: UsuarioDetalhe, props: true},
+                    {path: ':id', component: UsuarioDetalhe, props: true, 
+                      beforeEnter: (to, from, next) => {
+                          console.log('antes da rota -> usuario detalhe')
+                      }
+                    },
                     {path: ':id/editar', component: UsuarioEditar, props: true, name: 'editarUsuario'}
             ]
         },
@@ -46,7 +50,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     console.log('antes das rotas -> global*')
-    next(false)
+    next()
 })
 
 // experimentar http://localhost:8080/redirecionar

@@ -46,7 +46,10 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     console.log('antes das rotas -> global*')
-    next()
+    if (to.path !== '/usuario') {
+        next('/usuario')
+    }
+    else { next() }    
 })
 
 // experimentar http://localhost:8080/redirecionar

@@ -15,7 +15,9 @@ export default {
      beforeRouteEnter(to, from, next) {
         //console.log(this.id)  // dá errp 
         console.log('dentro do componente -> usuário detalhe')
-        next()
+        next(vm => {
+            console.log(vm.id)
+        })
      }
 }
 </script>

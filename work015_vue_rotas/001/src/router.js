@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Inicio from './components/Inicio'
-import Usuario from './components/usuario/Usuario'
+//import Usuario from './components/usuario/Usuario'
 
-import UsuarioDetalhe from './components/usuario/UsuarioDetalhe'
+//import UsuarioDetalhe from './components/usuario/UsuarioDetalhe'
 //import UsuarioEditar from './components/usuario/UsuarioEditar'
-import UsuarioLista from './components/usuario/UsuarioLista'
+//import UsuarioLista from './components/usuario/UsuarioLista'
 import Menu from './components/template/Menu'
 import MenuAlt from './components/template/MenuAlt'
 
@@ -13,6 +13,9 @@ import MenuAlt from './components/template/MenuAlt'
 Vue.use(Router)
 
 const UsuarioEditar = () => import('./components/usuario/UsuarioEditar')
+const Usuario = () => import('./components/usuario/Usuario')
+const UsuarioLista = () => import('./components/usuario/UsuarioLista')
+const UsuarioDetalhe = () => import('./components/usuario/UsuarioDetalhe')
 
 const router = new Router({
     mode: 'history', // ou 'hash'
@@ -57,6 +60,8 @@ router.beforeEach((to, from, next) => {
 })
 
 /* 1) ir em Network -> 0.js -> Headers -> Purpose: prefetch
-   2) manter Network limpo -> Usuários -> Usuario2 -> editar -> 0.js em Network -> Preview 
+   2) manter Network limpo -> Usuários -> Usuario2 -> editar -> 0.js em Network -> Preview
+   3) no inicial limpo f5 -> ver 0.js, 1.js, 2.js, 3.js
+   4) observar o Network em ->  Usuários -> Usuario2 -> editar -> 0.js em Network -> Preview 
 */
 export default router

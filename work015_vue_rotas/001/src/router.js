@@ -4,13 +4,15 @@ import Inicio from './components/Inicio'
 import Usuario from './components/usuario/Usuario'
 
 import UsuarioDetalhe from './components/usuario/UsuarioDetalhe'
-import UsuarioEditar from './components/usuario/UsuarioEditar'
+//import UsuarioEditar from './components/usuario/UsuarioEditar'
 import UsuarioLista from './components/usuario/UsuarioLista'
 import Menu from './components/template/Menu'
 import MenuAlt from './components/template/MenuAlt'
 
 
 Vue.use(Router)
+
+const UsuarioEditar = () => import('./components/usuario/UsuarioEditar')
 
 const router = new Router({
     mode: 'history', // ou 'hash'
@@ -54,5 +56,7 @@ router.beforeEach((to, from, next) => {
     next()
 })
 
-// experimentar http://localhost:8080/redirecionar
+/* 1) ir em Network -> 0.js -> Headers -> Purpose: prefetch
+   2) manter Network limpo -> Usuários -> Usuario2 -> editar -> 0.js em Network -> Preview 
+*/
 export default router

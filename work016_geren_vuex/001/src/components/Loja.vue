@@ -29,6 +29,8 @@ export default {
                 preco: this.preco
             }
             this.sequencia++
+            
+            this.$store.state.produtos.push(produto)
             // eslint-disable-next-line
             console.log(produto)
         }

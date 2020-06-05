@@ -13,10 +13,8 @@ export default {
     computed: {
         total() {
             return this.$store.getters.valorTotal
-        },
-        produtos() {
-            return this.$store.state.produtos
         }
+        
     }
     
 }

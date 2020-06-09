@@ -22,7 +22,10 @@ export default {
         }
     },
     methods: {
-        ...mapActions(['adicionarProduto']),
+        // ...mapActions(['adicionarProduto']), é o mesmo do debaixo
+        adicionarProduto(produto) {
+            this.$store.dispatch('adicionarProduto', produto)
+        },
         adicionar() {
             const produto = {
                 id: this.sequencia,

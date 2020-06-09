@@ -19,9 +19,9 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        adicionarProduto(contexto, produto) {
+        adicionarProduto({commit}, produto) {
            setTimeout(() => {
-              contexto.commit('adicionarProduto', produto)
+              commit('adicionarProduto', produto)
            }, 1000)
         }
     }

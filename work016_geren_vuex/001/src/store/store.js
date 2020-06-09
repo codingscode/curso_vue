@@ -13,9 +13,16 @@ export default new Vuex.Store({
               .reduce((total, atual) => total + atual, 0)
         }
     },
-    mutations: {
+    mutations: {  // é como setter
         adicionarProduto(state, produto) {
            state.produtos.push(produto)
+        }
+    },
+    actions: {
+        adicionarProduto(contexto, produto) {
+           setTimeout(() => {
+              contexto.commit('adicionarProduto', produto)
+           }, 1000)
         }
     }
 })

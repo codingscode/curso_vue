@@ -16,9 +16,7 @@ import {mapActions} from 'vuex'
 export default {
     data() {
         return {
-            sequencia: 1,
-            quantidade: 1,
-            preco: 9.99,
+            sequencia: 1
         }
     },
     methods: {
@@ -43,6 +41,14 @@ export default {
 
             // eslint-disable-next-line
             console.log(produto)
+        }
+    },
+    computed: {
+        quantidade() {
+            return this.$store.state.quantidade
+        },
+        preco() {
+            return this.$store.state.preco
         }
     }
 }

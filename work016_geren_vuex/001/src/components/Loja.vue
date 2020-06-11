@@ -33,14 +33,12 @@ export default {
             }
             this.sequencia++
             
-            //this.$store.state.produtos.push(produto)
-
-            //this.$store.commit('adicionarProduto', produto)
             this.adicionarProduto(produto)
             //this.$store.dispatch('adicionarProduto', produto)
 
             // eslint-disable-next-line
-            console.log(produto)
+            console.log(this.$store.getters.getNome)
+            console.log(this.$store.getters.getNomeCompleto)
         }
     },
     computed: {

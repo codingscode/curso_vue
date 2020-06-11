@@ -13,8 +13,6 @@ export default new Vuex.Store({
         nome: 'Kyle',
         sobrenome: 'Smith'
     },
-    getters: {
-        ...getters
-    },
+    getters: getters,
     modules: {carrinho, parametros}    
 })

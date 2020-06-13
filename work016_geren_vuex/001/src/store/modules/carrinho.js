@@ -15,10 +15,13 @@ export default {
          }
      },
      actions: {
-         adicionarProduto({commit, state, rootState}, produto) {
-            setTimeout(() => {
-               commit('adicionarProduto', produto)
-            }, 1000)
+         adicionarProduto: {
+            root: true,
+            handler({commit}, produto) {
+               setTimeout(() => {
+                  commit('adicionarProduto', produto)
+               }, 1000)
+            }
          }
      }
 }

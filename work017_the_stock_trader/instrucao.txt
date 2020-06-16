@@ -1,4 +1,12 @@
 vue dev tools
 
+vuetifyjs.com
+
+---------------------------------
+
+http://localhost:8080/
+http://localhost:8080/portfolio
+http://localhost:8080/stocks
 
 
+---------------------------------

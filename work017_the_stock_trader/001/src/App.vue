@@ -1,8 +1,9 @@
 <template>
     <v-app>
+		<Cabecalho />
 		<v-content>
 			<v-container>
-				<router-view>App</router-view>
+				<router-view></router-view>
 			</v-container>
 		</v-content>
 	</v-app>
@@ -10,8 +11,10 @@
 </template>
 
 <script>
-export default {
+import Cabecalho from './components/Cabecalho'
 
+export default {
+     components: {Cabecalho}
 }
 </script>
 

@@ -8,7 +8,7 @@
        <v-card>
            <v-container fill-height>
                <v-text-field label="Quantidade" type="number" v-model.number="quantidade"/>
-               <v-btn class="green darken-3 white--text" @click="comprarStock">Comprar</v-btn>
+               <v-btn class="green darken-3 white--text" @click="comprarStock" :disabled="quantidade <= 0 || !Number.isInteger(quantidade)">Comprar</v-btn>
            </v-container>
        </v-card>
     </v-flex>

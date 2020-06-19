@@ -14,7 +14,10 @@
 import Cabecalho from './components/Cabecalho'
 
 export default {
-     components: {Cabecalho}
+	 components: {Cabecalho},
+	 created() {
+		this.$store.dispatch('iniciarStocks')
+	 }
 }
 </script>
 

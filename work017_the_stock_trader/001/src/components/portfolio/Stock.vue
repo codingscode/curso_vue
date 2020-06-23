@@ -34,12 +34,12 @@ export default {
                 quantidade: this.quantidade
             }
 
-            this.venderStock(pedido)
+            this.venderStockAction(pedido)
             //this.$store.dispatch('venderStock', pedido)
             console.log(pedido)
             this.quantidade = 0
         }
-      }
+     }
 }
 </script>
 

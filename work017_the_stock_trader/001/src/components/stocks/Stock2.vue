@@ -30,6 +30,7 @@ export default {
                 quantidade: this.quantidade
             }
 
+            this.$store.dispatch('comprarStock', pedido)
             console.log(pedido)
             this.quantidade = 0
         }

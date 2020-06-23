@@ -5,7 +5,7 @@ export default {
         stocks: []
     },
     mutations: {
-        comprarStock(state, {stockId, quantidade, stockPreco}) {
+         comprarStock(state, {stockId, quantidade, stockPreco}) {
            const registro = state.stocks.find(elemento => elemento.id == stockId)
            if (registro) {
               registro.quantidade += quantidade

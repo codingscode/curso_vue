@@ -11,7 +11,7 @@ export default {
     },
     actions: {
        comprarStock({commit}, pedido) {
-          commit()
+          commit('comprarStock', pedido)
        },
        iniciarStocks({commit}) {
           console.log('iniciarStocks...') 

@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
+
 export default {
       props: ['stock'],
       data() {
@@ -24,6 +26,7 @@ export default {
         }
       },
       methods: {
+        ...mapActions({venderStockAction: 'venderStock'}),
         venderStock() {
             const pedido = {
                 stockId: this.stock.id,
@@ -31,7 +34,8 @@ export default {
                 quantidade: this.quantidade
             }
 
-            this.$store.dispatch('venderStock', pedido)
+            this.venderStock(pedido)
+            //this.$store.dispatch('venderStock', pedido)
             console.log(pedido)
             this.quantidade = 0
         }

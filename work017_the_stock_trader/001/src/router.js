@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Inicio from './components/Inicio'
+import Inicio from './components/Inicio.vue'
 import Portfolio from './components/portfolio/Portfolio.vue'
 import Stocks2 from './components/stocks/Stocks2'
 

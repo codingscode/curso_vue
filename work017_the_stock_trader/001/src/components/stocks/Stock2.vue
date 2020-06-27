@@ -8,7 +8,7 @@
        <v-card>
            <v-container fill-height>
                <v-text-field label="Quantidade" type="number" v-model.number="quantidade"/>
-               <v-btn class="green darken-3 white--text" @click="comprarStock" :disabled="quantidade <= 0 || !Number.isInteger(quantidade)">Comprar</v-btn>
+               <v-btn class="green darken-3 white--text" @click="comprarStock" :disabled="fundosInsuficiente || quantidade <= 0 || !Number.isInteger(quantidade)">Comprar</v-btn>
            </v-container>
        </v-card>
     </v-flex>
@@ -34,7 +34,15 @@ export default {
             console.log(pedido)
             this.quantidade = 0
         }
-      }
+      },
+      computed: {
+          fundos() {
+              return this.$store.getters.fundos
+          },
+          fundosInsuficiente() {
+              return this.quantidade*this.stock.preco > this.fundos
+          }
+      } 
 }
 </script>
 

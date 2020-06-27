@@ -7,8 +7,10 @@
        </v-card>
        <v-card>
            <v-container fill-height>
-               <v-text-field label="Quantidade" type="number" v-model.number="quantidade"/>
-               <v-btn class="green darken-3 white--text" @click="comprarStock" :disabled="fundosInsuficiente || quantidade <= 0 || !Number.isInteger(quantidade)">Comprar</v-btn>
+               <v-text-field label="Quantidade" type="number" :error="fundosInsuficiente" v-model.number="quantidade"/>
+               <v-btn class="green darken-3 white--text" @click="comprarStock" :disabled="fundosInsuficiente || quantidade <= 0 || !Number.isInteger(quantidade)">
+                   {{fundosInsuficiente ? 'Insuficiente' : 'Comprar'}}
+               </v-btn>
            </v-container>
        </v-card>
     </v-flex>

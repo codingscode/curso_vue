@@ -27,7 +27,7 @@
             </v-menu>
             <v-layout align-center>
                  <span class="text-uppercase grey--text text--darken-2">
-                      Saldo: {{fundos}}
+                      Saldo: {{fundos | moeda}}
                  </span>
             </v-layout>
 

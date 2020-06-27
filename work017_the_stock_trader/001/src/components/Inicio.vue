@@ -10,7 +10,7 @@
             <span class="headline white--text font-weight-light">Clique em 'Finalizar Dia' para iniciar um novo dia!</span>
         </v-card>
         <v-divider class="my-4"/>
-        <p class="display-1"><strong>Seu Saldo:</strong> {{fundos}}</p>
+        <p class="display-1"><strong>Seu Saldo:</strong> {{fundos | moeda}}</p>
     </div>
 </template>
 

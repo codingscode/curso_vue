@@ -7,6 +7,11 @@ export default {
     mutations: {
        setStocks(state, stocks) {
           state.stocks = stocks
+       },
+       randomizeStocks(state) {
+          state.stocks.forEach(stock => {
+             stock.preco = Math.round(stock.preco*(1 + Math.random() - 0.45))
+          })
        }
     },
     actions: {
@@ -16,6 +21,9 @@ export default {
        iniciarStocks({commit}) {
           console.log('iniciarStocks...') 
           commit('setStocks', stocks_data)
+       },
+       randomizeStocks({commit}) {
+          commit('randomizeStocks')
        }
     },
     getters: {

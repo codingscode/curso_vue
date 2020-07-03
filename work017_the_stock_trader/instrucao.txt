@@ -21,6 +21,8 @@ https://console.firebase.google.com/project/stock-trader-4498e/database/firestor
 https://console.firebase.google.com/project/stock-trader-4498e/database/stock-trader-4498e/data/~2F?hl=pt-br
 https://stock-trader-4498e.firebaseio.com/
 
+verificar o firebase
+
 
 
 

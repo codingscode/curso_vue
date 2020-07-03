@@ -20,7 +20,7 @@
                     <v-list-tile @click="salvarDados">
                         <v-list-tile-title>Salvar Dados</v-list-tile-title>
                     </v-list-tile>
-                    <v-list-tile>
+                    <v-list-tile @click="carregarDadosLocais">
                         <v-list-tile-title>Carregar Dados</v-list-tile-title>
                     </v-list-tile>
                 </v-list>
@@ -45,13 +45,16 @@ export default {
          }
       },
       methods: {
-            ...mapActions(['randomizeStocks']),
+            ...mapActions(['randomizeStocks', 'carregarDados']),
             finalizarDia() {
                 this.randomizeStocks()
             },
             salvarDados() {
                 const {fundos, stockPortfolio, stocks} = this.$store.getters
                 this.$http.put('dado1.json', {fundos, stockPortfolio, stocks})  // {fundos: fundos, stockPortfolio: stockPortfolio, stocks: stocks}
+            },
+            carregarDadosLocais() {
+                this.carregarDados()
             }
       }
 }

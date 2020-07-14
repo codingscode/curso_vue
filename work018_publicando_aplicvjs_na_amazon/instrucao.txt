@@ -23,3 +23,7 @@ https://stock-trader-4498e.firebaseio.com/
 
 verificar o firebase
 
+
+
+
+

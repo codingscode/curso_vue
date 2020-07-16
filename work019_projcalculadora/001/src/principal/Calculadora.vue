@@ -1,7 +1,24 @@
 <template>
      <div class="calculadora">
          <Mostrador />
-         <Botao />
+         <Botao rotulo="AC" triplo/>
+         <Botao rotulo="/" operacao/>
+         <Botao rotulo="7"/>
+         <Botao rotulo="8"/>
+         <Botao rotulo="9"/>
+         <Botao rotulo="*" operacao/>
+         <Botao rotulo="4"/>
+         <Botao rotulo="5"/>
+         <Botao rotulo="6"/>
+         <Botao rotulo="-" operacao/>
+         <Botao rotulo="1"/>
+         <Botao rotulo="2"/>
+         <Botao rotulo="3"/>
+         <Botao rotulo="+" operacao/>
+         <Botao rotulo="0" duplo/>
+         <Botao rotulo="."/>
+         <Botao rotulo="=" operacao/>
+                  
      </div>
 </template>
 

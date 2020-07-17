@@ -1,9 +1,9 @@
 <template>
      <div class="calculadora">
          <Mostrador valor="1000" />
-         <Botao rotulo="AC" triplo/>
-         <Botao rotulo="/" operacao/>
-         <Botao rotulo="7"/>
+         <Botao rotulo="AC" triplo @onCalcButtonClick="limparMemoria" />
+         <Botao rotulo="/" operacao @onCalcButtonClick="setOperacao"/>
+         <Botao rotulo="7" @onCalcButtonClick="adicionarDigito"/>
          <Botao rotulo="8"/>
          <Botao rotulo="9"/>
          <Botao rotulo="*" operacao/>
@@ -28,7 +28,18 @@ import Mostrador from '../components/Mostrador'
 import Botao from '../components/Botao' 
 
 export default {
-      components: {Mostrador, Botao}
+      components: {Mostrador, Botao},
+      methods: {
+            limparMemoria() {
+                console.log('limpar memoria')
+            },
+            setOperacao(operacao) {
+                console.log(`Operacao ${operacao}`)
+            },
+            adicionarDigito(n) {
+                console.log(`Digito ${n}`)
+            }
+      }
 
 }
 </script>

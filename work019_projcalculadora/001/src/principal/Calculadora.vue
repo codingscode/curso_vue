@@ -4,20 +4,20 @@
          <Botao rotulo="AC" triplo @onCalcButtonClick="limparMemoria" />
          <Botao rotulo="/" operacao @onCalcButtonClick="setOperacao"/>
          <Botao rotulo="7" @onCalcButtonClick="adicionarDigito"/>
-         <Botao rotulo="8"/>
-         <Botao rotulo="9"/>
-         <Botao rotulo="*" operacao/>
-         <Botao rotulo="4"/>
-         <Botao rotulo="5"/>
-         <Botao rotulo="6"/>
-         <Botao rotulo="-" operacao/>
-         <Botao rotulo="1"/>
-         <Botao rotulo="2"/>
-         <Botao rotulo="3"/>
-         <Botao rotulo="+" operacao/>
+         <Botao rotulo="8" @onCalcButtonClick="adicionarDigito"/>
+         <Botao rotulo="9" @onCalcButtonClick="adicionarDigito"/>
+         <Botao rotulo="*" operacao @onCalcButtonClick="setOperacao"/>
+         <Botao rotulo="4" @onCalcButtonClick="adicionarDigito"/>
+         <Botao rotulo="5" @onCalcButtonClick="adicionarDigito"/>
+         <Botao rotulo="6" @onCalcButtonClick="adicionarDigito"/>
+         <Botao rotulo="-" operacao @onCalcButtonClick="setOperacao"/>
+         <Botao rotulo="1" @onCalcButtonClick="adicionarDigito"/>
+         <Botao rotulo="2" @onCalcButtonClick="adicionarDigito"/>
+         <Botao rotulo="3" @onCalcButtonClick="adicionarDigito"/>
+         <Botao rotulo="+" operacao @onCalcButtonClick="setOperacao"/>
          <Botao rotulo="0" duplo/>
          <Botao rotulo="."/>
-         <Botao rotulo="=" operacao/>
+         <Botao rotulo="=" operacao @onCalcButtonClick="setOperacao"/>
                   
      </div>
 </template>

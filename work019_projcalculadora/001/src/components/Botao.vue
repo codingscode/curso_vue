@@ -1,5 +1,5 @@
 <template>
-    <button class="botao" :class="{duplo, triplo, operacao}" >
+    <button class="botao" :class="{duplo, triplo, operacao}" @click="$emit('onCalcButtonClick', rotulo)">
         {{rotulo}}
     </button>
 </template>

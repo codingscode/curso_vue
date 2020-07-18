@@ -71,12 +71,13 @@ export default {
 
                 this.mostrarValor = mostrarValor
                 this.limparMostrador = false
+                this.valores[this.atual] = mostrarValor
 
-                if (n !== '.') {
+                /* if (n !== '.') {
                     const i = this.atual
                     const novoValor = parseFloat(mostrarValor)
                     this.valores[i] = novoValor
-                }
+                } */
             }
       },
       data: function() {

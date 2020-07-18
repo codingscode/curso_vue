@@ -34,7 +34,31 @@ export default {
                 Object.assign(this.$data, this.$options.data())
             },
             setOperacao(operacao) {
-                
+                if (this.atual === 0) {
+                    this.operacao = operacao
+                    this.atual = 1
+                    this.limparMostrador = true
+                }
+                else {
+                    const iguais = operacao === '='
+                    const operacaoAtual = this.operacao
+
+                    try {
+                        this.valores[0] = eval(
+                            `${this.valores[0]} ${operacaoAtual} ${this.valores[1]}`
+                        )
+                    }
+                    catch (erro) {
+                        this.$emit('onError', e)
+                    }
+
+                    this.valores[1] = 0
+
+                    this.mostrarValor = this.valores[0]
+                    this.operacao = iguais ? null : operacao
+                    this.atual = iguais ? 0 : 1
+                    this.limparMostrador = !iguais
+                }
             },
             adicionarDigito(n) {
                 if (n === '.' && this.mostrarValor.includes('.')) {

@@ -1,6 +1,6 @@
 <template>
      <div class="calculadora">
-         <Mostrador valor="1000" />
+         <Mostrador :valor="mostrarValor" />
          <Botao rotulo="AC" triplo @clique="limparMemoria" />
          <Botao rotulo="/" operacao @clique="setOperacao"/>
          <Botao rotulo="7" @clique="adicionarDigito"/>
@@ -31,13 +31,37 @@ export default {
       components: {Mostrador, Botao},
       methods: {
             limparMemoria() {
-                console.log('limpar memoria')
+                Object.assign(this.$data, this.$options.data())
             },
             setOperacao(operacao) {
-                console.log(`Operacao ${operacao}`)
+                
             },
             adicionarDigito(n) {
-                console.log(`Digito ${n}`)
+                if (n === '.' && this.mostrarValor.includes('.')) {
+                    return
+                }
+
+                const limparMostrador = this.mostrarValor === '0' || this.limparMostrador
+                const valorAtual = limparMostrador ? '' : this.mostrarValor  
+                const mostrarValor = valorAtual + n
+
+                this.mostrarValor = mostrarValor
+                this.limparMostrador = false
+
+                if (n !== '.') {
+                    const i = this.atual
+                    const novoValor = parseFloat(mostrarValor)
+                    this.valores[i] = novoValor
+                }
+            }
+      },
+      data: function() {
+            return {
+                mostrarValor: '0',
+                limparMostrador: false,
+                operacao: null,
+                valores: [0, 0],
+                atual: 0
             }
       }
 

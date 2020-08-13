@@ -1,15 +1,16 @@
 <template>
       <div id="app">
-		    <h1>
-      			Oi Vue
-            </h1>
-			
+		    <h1>Problema de Monty Hall</h1>
+			<Presente  />
       </div>
 </template>
 
 <script>
-export default {
+import Presente from './components/Presente'
 
+export default {
+	 name: 'App',
+	 components: {Presente}
 }
 </script>
 

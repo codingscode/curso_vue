@@ -1,16 +1,16 @@
 <template>
       <div id="app">
 		    <h1>Problema de Monty Hall</h1>
-			<Presente  />
+			<Porta numero="1" :temPresente="false" />
       </div>
 </template>
 
 <script>
-import Presente from './components/Presente'
+import Porta from './components/Porta'
 
 export default {
 	 name: 'App',
-	 components: {Presente}
+	 components: {Porta}
 }
 </script>
 

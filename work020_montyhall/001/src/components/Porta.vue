@@ -1,9 +1,9 @@
 <template>
        <div class="porta-area">
-           <div class="porta-moldura">
+           <div class="porta-moldura" :class="{selecionado: selecionado}"> <!-- ou só selecionado -->
                <Presente v-if="aberto && temPresente" />
            </div>
-           <div class="porta">
+           <div class="porta" @click="selecionado = !selecionado">
                <div class="numero">{{numero}}</div>
                <div class="macaneta"></div>
            </div>
@@ -32,6 +32,7 @@ export default {
 <style>
         :root {
             --porta-borda: 5px solid brown;
+            --borda-selecionada: 5px solid yellow;
         }
 
         .porta-area {
@@ -59,7 +60,7 @@ export default {
             justify-content: center;
             align-items: flex-end;
         }
-        
+
         .porta {
             position: absolute;
             top: 5px;
@@ -80,5 +81,11 @@ export default {
             background-color: brown;
             align-self: flex-start;
             margin-top: 60px;
+        }
+
+        .porta-moldura.selecionado {
+            border-left: var(--borda-selecionada);
+            border-top: var(--borda-selecionada);
+            border-right: var(--borda-selecionada);
         }
 </style>

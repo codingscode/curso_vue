@@ -59,4 +59,26 @@ export default {
             justify-content: center;
             align-items: flex-end;
         }
+        
+        .porta {
+            position: absolute;
+            top: 5px;
+            height: 295px;
+            width: 170px;
+            background-color: chocolate;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .porta .macaneta {
+            height: 20px;
+            width: 20px;
+            border-radius: 10px;
+            background-color: brown;
+            align-self: flex-start;
+            margin-top: 60px;
+        }
 </style>

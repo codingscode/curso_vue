@@ -1,7 +1,7 @@
 <template>
       <div id="app">
 		    <h1>Problema de Monty Hall</h1>
-			<Porta numero="1" :temPresente="false" />
+			<Porta numero="1" temPresente="false" />
       </div>
 </template>
 

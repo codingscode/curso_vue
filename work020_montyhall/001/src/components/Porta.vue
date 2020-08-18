@@ -5,7 +5,7 @@
            </div>
            <div class="porta" @click="selecionado = !selecionado" :class="{aberto}">
                <div class="numero" :class="{selecionado}">{{numero}}</div>
-               <div class="macaneta" :class="{selecionado}" @click="aberto = true"></div>
+               <div class="macaneta" :class="{selecionado}" @click.stop="aberto = true"></div>
            </div>
        </div>
 </template>
@@ -109,5 +109,5 @@ export default {
             display: none;
         }
 
-        
+
 </style>

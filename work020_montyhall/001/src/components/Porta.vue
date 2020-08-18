@@ -4,8 +4,8 @@
                <Presente v-if="aberto && temPresente" />
            </div>
            <div class="porta" @click="selecionado = !selecionado">
-               <div class="numero">{{numero}}</div>
-               <div class="macaneta"></div>
+               <div class="numero" :class="{selecionado}">{{numero}}</div>
+               <div class="macaneta" :class="{selecionado}"></div>
            </div>
        </div>
 </template>
@@ -87,5 +87,13 @@ export default {
             border-left: var(--borda-selecionada);
             border-top: var(--borda-selecionada);
             border-right: var(--borda-selecionada);
+        }
+
+        .porta .numero.selecionado {
+            color: yellow;
+        }
+
+        .porta .macaneta.selecionado {
+            background-color: yellow;
         }
 </style>

@@ -3,9 +3,9 @@
            <div class="porta-moldura" :class="{selecionado: selecionado}"> <!-- ou só selecionado -->
                <Presente v-if="aberto && temPresente" />
            </div>
-           <div class="porta" @click="selecionado = !selecionado">
+           <div class="porta" @click="selecionado = !selecionado" :class="{aberto}">
                <div class="numero" :class="{selecionado}">{{numero}}</div>
-               <div class="macaneta" :class="{selecionado}"></div>
+               <div class="macaneta" :class="{selecionado}" @click="aberto = true"></div>
            </div>
        </div>
 </template>
@@ -96,4 +96,18 @@ export default {
         .porta .macaneta.selecionado {
             background-color: yellow;
         }
+
+        .porta.aberto {
+            background-color: #0007;
+        }
+
+        .porta.aberto .macaneta {
+            display: none;
+        }
+
+        .porta.aberto .numero {
+            display: none;
+        }
+
+        
 </style>

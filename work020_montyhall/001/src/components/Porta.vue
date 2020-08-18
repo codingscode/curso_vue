@@ -1,11 +1,11 @@
 <template>
        <div class="porta-area">
-           <div class="porta-moldura" :class="{selecionado: selecionado}"> <!-- ou só selecionado -->
+           <div class="porta-moldura" :class="{selecionado: selecionado && !aberto}"> <!-- ou só selecionado -->
                <Presente v-if="aberto && temPresente" />
            </div>
            <div class="porta" @click="selecionado = !selecionado" :class="{aberto}">
                <div class="numero" :class="{selecionado}">{{numero}}</div>
-               <div class="macaneta" :class="{selecionado}" @click.stop="aberto = true"></div>
+               <div class="macaneta" :class="{selecionado}" @click="aberto = true"></div>
            </div>
        </div>
 </template>

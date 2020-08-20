@@ -68,4 +68,9 @@ export default {
 			align-items: center;
 			margin-bottom: 40px;
 		}
+
+		.form, .form input, .form button {
+			margin-bottom: 10px;
+			font-size: 2rem;
+		}
 </style>

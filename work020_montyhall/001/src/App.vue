@@ -73,4 +73,11 @@ export default {
 			margin-bottom: 10px;
 			font-size: 2rem;
 		}
+
+		.portas {
+			align-self: stretch;
+			display: flex;
+			justify-content: space-around;
+            flex-wrap: wrap;
+		}
 </style>

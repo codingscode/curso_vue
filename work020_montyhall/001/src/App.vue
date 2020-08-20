@@ -1,14 +1,13 @@
 <template>
       <div id="app">
 		    <h1>Problema de Monty Hall</h1>
-			<!-- <Porta numero="1" :temPresente="false" /> -->
 			<div class="form">
 				 <div v-if="!iniciado">
-					 <label for="quantPortas">Quantas portas</label>
+					 <label for="quantPortas">Quantas portas ? </label>
 					 <input type="text" id="quantPortas" size="3" v-model.number="quantPortas">
 				 </div>
 				 <div v-if="!iniciado">
-					 <label for="portaSelecionada">Qual porta é a premiada ?</label>
+					 <label for="portaSelecionada">Qual porta é a premiada ? </label>
 					 <input type="text" id="portaSelecionada" size="3" v-model.number="portaSelecionada">
 				 </div>
 				 <button v-if="!iniciado" @click="iniciado = true">Iniciar</button>
@@ -60,5 +59,13 @@ export default {
 			background-color: #0004;
 			padding: 20px;
 			margin-bottom: 60px;
+		}
+
+		.form {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 40px;
 		}
 </style>
